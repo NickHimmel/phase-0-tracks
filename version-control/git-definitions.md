@@ -1,6 +1,6 @@
 # Git Definitions
 
-**Instructions: ** Define each of the following Git concepts.
+**Instructions: ** Define each of the following Git concepts and then tag your teacher.
 
 * What is version control?  Why is it useful?
 
