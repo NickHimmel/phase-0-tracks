@@ -2,6 +2,12 @@
 	position: relative;
 }
 
+.glasses {
+	position: absolute;
+	top: 225px;
+  	left: 50%;
+}
+
 .octopus {
 	display: block;
 	margin: 0 auto;
