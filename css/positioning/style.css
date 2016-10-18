@@ -2,6 +2,11 @@
 	position: relative;
 }
 
+.hat	{
+	position: absolute;
+	left: 50%
+}
+
 .glasses {
 	position: absolute;
 	top: 225px;
