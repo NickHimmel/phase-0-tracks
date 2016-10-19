@@ -1,3 +1,7 @@
+* {
+  margin: 0 auto;
+}
+
 body {
   max-width: 960px;
 }
@@ -52,8 +56,10 @@ main {
     font-size: 1.1em;
   }
   #external-links {
-    position: fixed;
+/*    position: fixed;
     padding: 10px;
-    right: 0px;
+    right: 0px;*/
+    float: right;
+
   }
 }
