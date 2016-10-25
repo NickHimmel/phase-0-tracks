@@ -1,0 +1,56 @@
+In phase-0-tracks/ruby/algorithms.txt, write the algorithm for using an elevator. Remember, robots are not smart at all, so you'll have to spell everything out.
+For instance, how will your robot figure out which floor button to press?
+
+Ask which floor number from the list of floor numbers. 
+Find the floor button that matches the floor number requested 
+If the floor button is found:
+Press the floor button.
+Wait until the elevator has stopped moving and the doors have opened.
+Exit the Elevator
+Otherwise: 
+Tell the person the floor number could not be found.
+Ask the person which floor number they would like again.
+
+
+Release 1: Find a Real-Life Algorithm
+You're a smart human, not a dumb computer. That means you likely follow algorithms on a daily basis without even knowing it, taking your astonishing abilities completely for granted.
+DO THE THING
+Come up with an example of a common task in your life that could be translated into an algorithm, and write out the steps in algorithms.txt (labeled with the name of the task).
+
+Making My Wife Lunch
+
+
+Count out two eggs
+Put those eggs into an empty pot
+Poor water into the pot
+Cover pot
+Turn the heat on high 
+Wait until the water is boiling
+Turn off heat. 
+Leave pot for 10 minutes
+Fill bowl with water
+Add ice
+Put eggs into ice water after 10 minutes
+Leave in ice water for 10 minutes
+Dry off eggs
+Put eggs into tupperware
+
+
+Get spinach out of fridge
+Empty spinach into tupperware 
+Cut lemon in half
+Squeeze half of lemon over spinach
+Get out olive oil 
+Poor three capfuls of olive oil over spinach
+Get out sunflower seeds
+Measure two teaspoons of sunflower seeds
+Add those sunflower seeds to spinach
+Close tupperware
+
+
+If you have made the eggs and spinach 
+Put the two tupperwares in a bag
+Add kefir 
+Tie the bag up
+Put in the backpack
+Zip the backpack closed
