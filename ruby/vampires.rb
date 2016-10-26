@@ -9,9 +9,10 @@ interview_health = gets.chomp
 
 # puts "My am #{interview_name}, I am #{interview_age} old! #{interview_garlic} to garlic bread, #{interview_health} to health insurance" 
 
-case 
-when interview_age < 100 && (interview_garlic || interview_health)
+if interview_age < 100 && (interview_garlic || interview_health)
 	puts "Probably not a vampire."
+elsif interview_age >= 100 && (interview_garlic || interview_health)
+	puts "Probably a vampire."
 else
 	puts "Vampire!"
 end
