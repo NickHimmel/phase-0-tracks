@@ -1,7 +1,7 @@
 # puts "How many employees will be processed"
 # employees = gets.chomp
 
-
+evaluated_employee = ""
 puts "What is your name?"
 interview_name = gets.chomp.downcase!
 puts "How old are you?"
@@ -14,13 +14,15 @@ interview_health = gets.chomp.downcase!
 # puts "My am #{interview_name}, I am #{interview_age} old! #{interview_garlic} to garlic bread, #{interview_health} to health insurance" 
 
 if interview_age < 100 && (interview_garlic == "yes" || interview_health == "yes")
-	puts "Probably not a vampire."
+	evaluated_employee = "probably not a vampire"
 elsif interview_age >= 100 && (interview_garlic != "yes" || interview_health != "yes")
-	puts "Probably a vampire."
+	evaluated_employee = "probably a vampire"
 elsif interview_age >= 100 && (interview_garlic != "yes" && interview_health != "yes")
-	puts "Almost certainly a vampire!"
+	evaluated_employee = "almost certainly a vampire"
 elsif interview_name == "drake cula" || interview_name == "tu fang"
-	puts "Definitely a vampire"
+	evaluated_employee = "definitely a vampire"
 else
 	puts "Results inconclusive!"
 end
+
+puts "#{interview_name} is #{evaluated_employee}"
