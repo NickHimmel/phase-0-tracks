@@ -1,0 +1,43 @@
+body {
+  font-family: Georgia;  
+  font-size: 1em;
+  background-color: beige;
+  border-spacing: 10px;
+}
+
+h1 {
+  font-size: 1.4em; 
+  text-align: center;
+}
+
+
+h2 {
+  font-size: 1.2em;
+  text-decoration: underline;
+  font-style: italic;
+}
+
+a:hover {
+  color: pink;  
+}
+
+section {
+  display: table-cell;
+  margin: 20px;
+  width: 50%;
+}
+
+.column-1 {
+  background-color: red;
+  padding: 20px;
+  }
+.column-2 {
+  background-color: blue;
+  padding: 20px;
+  }
+
+footer {
+  border: 2px dotted brown;
+  text-align: center;
+  margin-top: 10px;
+}
