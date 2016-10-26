@@ -11,8 +11,10 @@ interview_health = gets.chomp
 
 if interview_age < 100 && (interview_garlic == "yes" || interview_health == "yes")
 	puts "Probably not a vampire."
-# elsif interview_age >= 100 && (interview_garlic || interview_health)
-# 	puts "Probably a vampire."
+elsif interview_age >= 100 && (interview_garlic != "yes" || interview_health != "yes")
+	puts "Probably a vampire."
+elsif interview_age >= 100 && (interview_garlic != "yes" && interview_health != "yes")
+	puts "Almost certainly a vampire!"
 else
-	puts "Vampire!"
+	puts "Results inconclusive!"
 end
