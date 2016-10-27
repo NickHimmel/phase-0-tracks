@@ -36,7 +36,7 @@ def interview_vampire()
 	if interview_name == "drake cula" || interview_name == "tu fang"
 		
 		evaluated_employee = "definitely a vampire"
-		
+
 	end 
 
 	if evaluated_employee == ""
@@ -52,6 +52,41 @@ end
 
 interview_vampire
 
+	# This did not work, I couldn't figure out how stop the if/elsif/else block from exiting the block after the second elseif
+	
+	# evaluated_employee = ""
+	# puts "What is your name?"
+	# interview_name = gets.chomp.downcase!
+	# puts "How old are you?"
+	# interview_age = gets.chomp.to_i
+	# puts "Our company cafeteria serves garlic bread. Should we order some for you? (yes/no)"
+	# interview_garlic = gets.chomp.downcase!
+	# puts "Would you like to enroll in the company’s health insurance? (yes/no)"
+	# interview_health = gets.chomp.downcase!
+
+	# if interview_age < 100 && (interview_garlic == "yes" || interview_health == "yes")
+	
+	# 	evaluated_employee = "probably not a vampire"
+	
+	# elsif interview_age >= 100 && (interview_garlic != "yes" || interview_health != "yes")
+	
+	# 	evaluated_employee = "probably a vampire"
+
+	# elsif interview_age >= 100 && (interview_garlic != "yes" && interview_health != "yes")
+	
+	# 	evaluated_employee = "almost certainly a vampire"
+	
+	# elsif interview_name == "drake cula" || interview_name == "tu fang"
+		
+	# 	evaluated_employee = "definitely a vampire"
+		
+	# else evaluated_employee == ""
+		
+	# 	puts "Results inconclusive!"
+	
+	# end
+
+	# puts "#{interview_name} is #{evaluated_employee}"
 
 
 	
