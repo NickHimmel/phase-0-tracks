@@ -11,14 +11,14 @@ def interview_vampire()
 
 	evaluated_employee = ""
 	puts "What is your name?"
-	interview_name = gets.chomp.downcase!
+	interview_name = gets.chomp
 	puts "How old are you?"
 	interview_age = gets.chomp.to_i
 	puts "Our company cafeteria serves garlic bread. Should we order some for you? (yes/no)"
-	interview_garlic = gets.chomp.downcase!
+	interview_garlic = gets.chomp.downcase
 	puts "Would you like to enroll in the company’s health insurance? (yes/no)"
-	interview_health = gets.chomp.downcase!
-
+	interview_health = gets.chomp.downcase
+	
 	if interview_age < 100 && (interview_garlic == "yes" || interview_health == "yes")
 	
 		evaluated_employee = "probably not a vampire"
@@ -29,17 +29,17 @@ def interview_vampire()
 	
 	end 
 
-	if interview_age >= 100 && (interview_garlic != "yes" && interview_health != "yes")
+	# if interview_age >= 100 && (interview_garlic != "yes" && interview_health != "yes")
 	
-		evaluated_employee = "almost certainly a vampire"
+	# 	evaluated_employee = "almost certainly a vampire"
 	
-	end
+	# end
 
-	if interview_name == "drake cula" || interview_name == "tu fang"
+	# if interview_name == "drake cula" || interview_name == "tu fang"
 		
-		evaluated_employee = "definitely a vampire"
+	# 	evaluated_employee = "definitely a vampire"
 
-	end 
+	# 
 
 	# if evaluated_employee == ""
 		
