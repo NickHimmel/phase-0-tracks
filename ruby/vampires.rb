@@ -7,7 +7,7 @@
 # Otherwise, print “Results inconclusive.”
 # Print the result at the end of the survey.
 
-def interview_vampire()
+def interview_vampire(i)
 
 	evaluated_employee = ""
 	puts "What is your name?"
@@ -43,7 +43,7 @@ def interview_vampire()
 
 	if evaluated_employee == ""
 		
-		puts "Results inconclusive!"
+		evaluated_employee = "Results inconclusive!"
 	
 	end
 
@@ -51,23 +51,23 @@ def interview_vampire()
 
 end
 
-interview_vampire()
+# interview_vampire()
 
 # At the beginning of your program, ask the user how many employees will be processed, then begin the survey process for the first employee. After you print the result for that employee, start the survey over again, and repeat until all the employees have been processed.
 
 # (Hmm, doing things over and over again ... that certainly sounds like a loop, doesn't it?)
 
-# puts "How many employees will be processed"
-# employees = gets.chomp.to_i
-# i = 1
+puts "How many employees will be processed"
+employees = gets.chomp.to_i
+i = 1
 
-# while i <= employees 
+while i <= employees 
 	
-# 	interview_vampire(i)
+	interview_vampire(i)
 
-# 	i += 1
+	i += 1
 
-# end
+end
 
 
 	# This did not work, I couldn't figure out how stop the if/elsif/else block from exiting the block after the second elseif
