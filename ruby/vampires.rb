@@ -17,12 +17,19 @@ if interview_age < 100 && (interview_garlic == "yes" || interview_health == "yes
 	evaluated_employee = "probably not a vampire"
 elsif interview_age >= 100 && (interview_garlic != "yes" || interview_health != "yes")
 	evaluated_employee = "probably a vampire"
-elsif interview_age >= 100 && (interview_garlic != "yes" && interview_health != "yes")
+end 
+
+if interview_age >= 100 && (interview_garlic != "yes" && interview_health != "yes")
 	evaluated_employee = "almost certainly a vampire"
-elsif interview_name == "drake cula" || interview_name == "tu fang"
+end
+
+if interview_name == "drake cula" || interview_name == "tu fang"
 	evaluated_employee = "definitely a vampire"
 else
 	puts "Results inconclusive!"
 end
 
 puts "#{interview_name} is #{evaluated_employee}"
+
+
+	
