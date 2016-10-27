@@ -84,6 +84,7 @@ while i <= employees
 
 end
 
+puts "Actually, never mind! What do these questions have to do with anything? Let's all be friends."
 
 	# This did not work, I couldn't figure out how stop the if/elsif/else block from exiting the block after the second elseif
 
