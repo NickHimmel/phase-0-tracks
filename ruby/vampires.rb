@@ -29,23 +29,23 @@ def interview_vampire()
 	
 	end 
 
-	# if interview_age >= 100 && (interview_garlic != "yes" && interview_health != "yes")
+	if interview_age >= 100 && (interview_garlic != "yes" && interview_health != "yes")
 	
-	# 	evaluated_employee = "almost certainly a vampire"
+		evaluated_employee = "almost certainly a vampire"
 	
-	# end
+	end
 
-	# if interview_name == "drake cula" || interview_name == "tu fang"
+	if interview_name == "drake cula" || interview_name == "tu fang"
 		
-	# 	evaluated_employee = "definitely a vampire"
+		evaluated_employee = "definitely a vampire"
 
-	# 
+	end
 
-	# if evaluated_employee == ""
+	if evaluated_employee == ""
 		
-	# 	puts "Results inconclusive!"
+		puts "Results inconclusive!"
 	
-	# end
+	end
 
 	puts "#{interview_name} is #{evaluated_employee}"
 
