@@ -10,6 +10,8 @@
 def interview_vampire(i)
 
 	evaluated_employee = ""
+	employee_allergies = ""
+
 	puts "What is your name?"
 	interview_name = gets.chomp
 	puts "How old are you?"
@@ -19,18 +21,6 @@ def interview_vampire(i)
 	puts "Would you like to enroll in the company’s health insurance? (yes/no)"
 	interview_health = gets.chomp.downcase
 	
-	employee_allergies = ""
-
-	while employee_allergies = true
-		puts "name any allergies, one at a time. Type \"done\" when finished"
-		employee_allergies = gets.chomp
-		if employee_allergies == "done"
-			break
-		end
-		if employee_allergies == "sunshine"
-			break
-		end 
-	end
 
 	if interview_age < 100 && (interview_garlic == "yes" || interview_health == "yes")
 	
@@ -60,8 +50,20 @@ def interview_vampire(i)
 	
 	end
 
+	while true
+		puts "name any allergies, one at a time. Type \"done\" when finished"
+		employee_allergies = gets.chomp
+		if employee_allergies == "done"
+			break
+		end
+		if employee_allergies == "sunshine"
+			evaluated_employee = "probably a vampire"
+			break
+		end 
+	end
+
 	puts "#{interview_name} is #{evaluated_employee}"
-	allergies
+
 end
 
 # interview_vampire()
