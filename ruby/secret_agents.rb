@@ -13,16 +13,20 @@ def encrypt (secret_string)
 # for every index take that character and move forward one
 	counter = 0
 	while counter < secret_string.length
-		secret_string[counter] = secret_string[counter].next
+		if secret_string[counter] == "z"
+			secret_string[counter] = "a"
+		else
+			secret_string[counter] = secret_string[counter].next
 		# anytime the program z delete the letter that follows the letter, because z becomes aa which becomes ab
 		# index z, once it is encrypted you have delete the index next to it. 
+		end
 		counter += 1
 	end	
 	p secret_string
 end
 
 def decrypt (secret_string)
-	# 
+	#go back one letter
 	alphabet = "abcdefghijklmnopqrstuvwxyz"
 	counter = 0
 	while counter < secret_string.length
