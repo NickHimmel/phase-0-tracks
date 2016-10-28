@@ -15,6 +15,8 @@ def encrypt (secret_string)
 	while counter < secret_string.length
 		if secret_string[counter] == "z"
 			secret_string[counter] = "a"
+		elsif secret_string[counter] == " "
+			secret_string[counter] == " "
 		else
 			secret_string[counter] = secret_string[counter].next
 		# anytime the program z delete the letter that follows the letter, because z becomes aa which becomes ab
@@ -34,17 +36,16 @@ def decrypt (secret_string)
 			secret_string[counter] = " "
 		else
 			index_number = alphabet.index(secret_string[counter]) - 1
-			secret_string[counter] = alphabet[index_number ]
+			secret_string[counter] = alphabet[index_number]
 		end
 		counter += 1
 	end
 	p secret_string
 end
 
-# ask a sercet agent whether they would like to decrypt or encrypt a password
-# puts to if else statement 
-# conduct the requested operation, prints the result to the screen and exits
 
+
+# ask a sercet agent whether they would like to decrypt or encrypt a password and then what is that password
 puts "What is your secret agent code name?"
 codename = gets.chomp 
 puts "Welcome Agent #{codename}, do you wish to decrypt or encrypt your secret password?"
@@ -53,6 +54,8 @@ decrypt_encrypt = gets.chomp
 puts "What is the password?"
 password = gets.chomp
 
+# run the decrypt method when decrypt is typed or the encrypt method when encrypt is typed
+# conduct the requested operation, prints the result to the screen and exits
 if decrypt_encrypt == "decrypt"
 	decrypt(password)
 else
@@ -65,3 +68,4 @@ decrypt("bcd")
 decrypt("afe")
 
 decrypt(encrypt("swordfish")) 
+#this works because it passes swordfish to encrypt first then passes results to decrypt, so it encypts then decyrpts
