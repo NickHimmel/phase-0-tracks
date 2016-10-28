@@ -35,8 +35,8 @@ def decrypt (secret_string)
 		else
 			index_number = alphabet.index(secret_string[counter]) - 1
 			secret_string[counter] = alphabet[index_number ]
-			counter += 1
 		end
+		counter += 1
 	end
 	p secret_string
 end
