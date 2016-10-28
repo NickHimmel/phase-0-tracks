@@ -30,18 +30,34 @@ def decrypt (secret_string)
 	alphabet = "abcdefghijklmnopqrstuvwxyz"
 	counter = 0
 	while counter < secret_string.length
-		index_number = alphabet.index(secret_string[counter])
-		secret_string[counter] = alphabet[index_number - 1]
-		counter += 1
+		if secret_string[counter] == " "
+			secret_string[counter] = " "
+		else
+			index_number = alphabet.index(secret_string[counter]) - 1
+			secret_string[counter] = alphabet[index_number ]
+			counter += 1
+		end
 	end
 	p secret_string
 end
 
-# ask a sercet agent whether they would like to decrypt or encrypt
-# puts to if else statement
-# ask them a password 
-# define a password and check the users password against that
+# ask a sercet agent whether they would like to decrypt or encrypt a password
+# puts to if else statement 
 # conduct the requested operation, prints the result to the screen and exits
+
+puts "What is your secret agent code name?"
+codename = gets.chomp 
+puts "Welcome Agent #{codename}, do you wish to decrypt or encrypt your secret password?"
+puts "Type decrypt or encrypt to proceed"
+decrypt_encrypt = gets.chomp
+puts "What is the password?"
+password = gets.chomp
+
+if decrypt_encrypt == "decrypt"
+	decrypt(password)
+else
+	encrypt(password)
+end
 
 encrypt("abc")
 encrypt("zed") 
