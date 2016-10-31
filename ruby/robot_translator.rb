@@ -18,10 +18,11 @@ def translate_char(char)
 	alphabet = "abcdefghijklmnopqrstuvwxyz"
 	halfway = alphabet.length / 2
 	is_capitalized = (char.upcase == char)
+	index_of_char = alphabet.index(char.downcase)
 
-	if !alphabet.index(char.downcase)
+	if !index_of_char
 		"boing"
-	elsif is_capitalized && alphabet.index(char.downcase) < halfway
+	elsif is_capitalized && index_of_char < halfway
 		"bloop"
 	elsif is_capitalized || char == "e"
 		"buzz"
