@@ -12,9 +12,13 @@
 
 # "Happy Halloween!" => "bloopbeepbeepbeepbeepboingbloopbeepbeepbeepbeepbuzzbeepboing"
 
-def robot_translator (string_translate)
-
-	
+def translate_phrase(phrase)
+	#loop through a phase
+	char_index = 0
+	while char_index < phrase.length
+		puts phrase[char_index]
+		char_index += 1
+	end
 end
 
-robot_translator("Happy Halloween!")
+translate_phrase("Happy Halloween!")
