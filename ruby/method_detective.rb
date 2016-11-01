@@ -7,13 +7,13 @@
 puts "iNvEsTiGaTiOn".swapcase
 # => “InVeStIgAtIoN”
 
-# "zom".<???>
+puts "zom".insert(1, "o")
 # => “zoom”
 
-# "enhance".<???>
+puts "enhance".center(15)
 # => "    enhance    "
 
-# "Stop! You’re under arrest!".<???>
+puts "Stop! You’re under arrest!".upcase
 # => "STOP! YOU’RE UNDER ARREST!"
 
 # "the usual".<???>
