@@ -24,10 +24,11 @@ puts " suspects".rjust(18, "the usual")
 puts " suspects".insert(0, "the usual")
 # => "the usual suspects"
 
-# "The case of the disappearing last letter".<???>
+puts "The case of the disappearing last letter".chomp("r")
+puts "The case of the disappearing last letter".slice(0, 39)
 # => "The case of the disappearing last lette"
 
-# "The mystery of the missing first letter".<???>
+puts "The mystery of the missing first letter".slice(1, 39)
 # => "he mystery of the missing first letter"
 
 # "Elementary,    my   dear        Watson!".<???>
