@@ -16,10 +16,12 @@ puts "enhance".center(15)
 puts "Stop! You’re under arrest!".upcase
 # => "STOP! YOU’RE UNDER ARREST!"
 
-# "the usual".<???>
-#=> "the usual suspects"
+puts "the usual".ljust(18, " suspects")
+puts "the usual".insert(-1, " suspects")
+# => "the usual suspects"
 
-# " suspects".<???>
+puts " suspects".rjust(18, "the usual")
+puts " suspects".insert(0, "the usual")
 # => "the usual suspects"
 
 # "The case of the disappearing last letter".<???>
