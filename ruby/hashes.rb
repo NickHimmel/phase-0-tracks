@@ -23,14 +23,26 @@ def client_details(client_info)
 	client_info[:hates] = gets.chomp
 	client_info
 end
+
 #Write a method that checks data types
 def data_types(client_info)
 	p client_info
 end
+
 #update key method
 def add_field(client_info)
-	p client_info
+	puts "Add a new field to your client information! Or type \"none\"" 
+	new_field = gets.chomp.to_sym
+	if new_field == "none"
+		puts "Ok!"
+	else
+		puts "Enter info for #{new_field}"
+		field_info = gets.chomp
+		client_info[new_field] = field_info
+	end
+	client_info
 end
+
 #declare a hash
 client_information = {}
 
@@ -42,3 +54,4 @@ data_types(client_information)
 #pass that hash to the update key method
 add_field(client_information)
 #print the hash
+puts client_information
