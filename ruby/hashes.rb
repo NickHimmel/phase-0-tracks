@@ -8,13 +8,27 @@
 
 #Write a method that prompts the designer/user for all the information
 
+def client_details(client_info)
+	puts "Enter first name:"
+	client_info[:first_name] = gets.chomp
+	p client_info
+end
 #Write a method that checks data types
-
+def data_types(client_info)
+	p client_info
+end
 #update key method
-
+def add_field(client_info)
+	p client_info
+end
 #declare a hash
+client_information = {}
+
 #pass that hash to the method to get information
+client_details(client_information)
 #print that hash
 #pass that hash to the method to check data type
+data_types(client_information)
 #pass that hash to the update key method
+add_field(client_information)
 #print the hash
