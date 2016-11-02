@@ -35,9 +35,10 @@ puts "The mystery of the missing first letter".slice(1, 39)
 puts "Elementary,    my   dear        Watson!".gsub(/\s+/, " ")
 # => "Elementary, my dear Watson!"
 
-# "z".<???>
+puts "z".ord
 # => 122 
 # (What is the significance of the number 122 in relation to the character z?)
+# Computers can only understand numbers so you have to have integer values that represent each character. 122 is the integer for “z”  
 
-# "How many times does the letter 'a' appear in this string?".<???>
+puts "How many times does the letter 'a' appear in this string?".count "a"
 # => 4
