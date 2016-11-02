@@ -25,13 +25,14 @@ puts " suspects".insert(0, "the usual")
 # => "the usual suspects"
 
 puts "The case of the disappearing last letter".chomp("r")
+puts "The case of the disappearing last letter".chop
 puts "The case of the disappearing last letter".slice(0, 39)
 # => "The case of the disappearing last lette"
 
 puts "The mystery of the missing first letter".slice(1, 39)
 # => "he mystery of the missing first letter"
 
-# "Elementary,    my   dear        Watson!".<???>
+puts "Elementary,    my   dear        Watson!".gsub(/\s+/, " ")
 # => "Elementary, my dear Watson!"
 
 # "z".<???>
