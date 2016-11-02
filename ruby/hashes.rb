@@ -11,7 +11,17 @@
 def client_details(client_info)
 	puts "Enter first name:"
 	client_info[:first_name] = gets.chomp
-	p client_info
+	puts "Enter last name:"
+	client_info[:last_name] = gets.chomp
+	puts "Number of rooms:"
+	client_info[:number_of_rooms] = gets.chomp
+	puts "Has children:(yes/no)"
+	client_info[:children] = gets.chomp
+	puts "Likes:"
+	client_info[:likes] = gets.chomp
+	puts "Hates:"
+	client_info[:hates] = gets.chomp
+	client_info
 end
 #Write a method that checks data types
 def data_types(client_info)
