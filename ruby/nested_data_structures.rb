@@ -17,3 +17,10 @@ met_museum = {
 }
 
 p met_museum
+
+p met_museum[:painting]
+p met_museum[:painting][:artist]
+p met_museum[:sculpture][:title]
+p met_museum[:painting][:info][2]
+p met_museum[:photography][:info][0]
+p met_museum[:sculpture][:info].push("temporary installation")
