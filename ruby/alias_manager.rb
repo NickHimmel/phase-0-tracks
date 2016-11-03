@@ -14,7 +14,12 @@
 #To Start write methods for the different parameters and make sure they work before writing code.
 
 #Method 1 swapping the first and last name
+def name_swap (name)
+	p name
+end
 #Method 2 Changing all of the vowels to the next vowel, a becomes e 
 #Method 3 Changing all of the consonants to next consonant
 
+secert_agent = "Felicia Torres"
+name_swap(secert_agent)
 # GOAL "Felicia Torres" will become "Vussit Gimodoe", 
