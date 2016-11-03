@@ -38,26 +38,32 @@ def vowel_swap (secret_name)
 		letters.gsub!(/[o]/, "U")
 		letters.gsub!(/[u]/, "A")
 	end
+	secret_name.map!{|letter| letter.downcase}
 	#loop through looking for vowels
-	secret_name 
 end
 
 #Method 3 Changing all of the consonants to next consonant
 #.next, but if it matches a vowel add another .next 
 #edge cases are " " and z
 def consonant_swap (secret_name)
-	p secret_name
 	secret_name.map do |letters|
+		
 		if letters == " "
 			letters
+		elsif letters == "z"
+			letters.gsub!(/[z]/, "A")
+		elsif letters =~ /[aeiou]/
+			p letters
 		end
 	end
 end
 
 #Method 4 to join and capatlize 
-secret_agent = "Felicia Torres"
+secret_agent = "Felicia Z Torres"
 downcase_string(secret_agent)
 secret_agent = name_swap(secret_agent)
 secret_agent = vowel_swap(secret_agent)
 consonant_swap(secret_agent)
+
+p secret_agent
 # GOAL "Felicia Torres" will become "Vussit Gimodoe", 
