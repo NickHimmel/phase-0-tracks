@@ -53,8 +53,14 @@ def consonant_swap (secret_name)
 		elsif letters == "z"
 			letters.gsub!(/[z]/, "A")
 		elsif letters =~ /[aeiou]/
-			p letters
+			letters
+		else 
+			letters.next!
+			if letters =~ /[aeiou]/
+				letters.next!
+			end
 		end
+		
 	end
 end
 
