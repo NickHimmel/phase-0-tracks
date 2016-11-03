@@ -14,15 +14,45 @@
 #To Start write methods for the different parameters and make sure they work before writing code.
 
 #Method 1 swapping the first and last name
-def name_swap (name)
-	name = name.split(' ')
-	name = name.reverse
-	name = name.join(' ')
-	name
+def name_swap (secret_name)
+	secret_name = secret_name.split(' ')
+	secret_name = secret_name.reverse
+	secret_name = secret_name.join(' ')
+	secret_name
 end
-#Method 2 Changing all of the vowels to the next vowel, a becomes e 
-#Method 3 Changing all of the consonants to next consonant
 
-secert_agent = "Felicia Torres"
-name_swap(secert_agent)
+#Method 2 Changing all of the vowels to the next vowel
+# (a, e, i, o, or u)
+# (e, i, o, u, or a)
+def vowel_swap (secret_name)
+	#first separate string into an array of characters
+	secret_name.downcase!
+	secret_name = secret_name.split('')
+	secret_name.map do |letters|
+		letters.gsub!(/[a]/, "!")
+		letters.gsub!(/[e]/, "@")
+		letters.gsub!(/[i]/, "$")
+		letters.gsub!(/[o]/, "*")
+		letters.gsub!(/[u]/, "#")
+
+		letters.gsub!(/[!]/, "e")
+		letters.gsub!(/[@]/, "i")
+		letters.gsub!(/[$]/, "o")
+		letters.gsub!(/[*]/, "u")
+		letters.gsub!(/[#]/, "a")
+	end
+	#loop through looking for vowels
+	secret_name 
+end
+
+#Method 3 Changing all of the consonants to next consonant
+#.next, but if it matches a vowel add another dot next and watch out for spaces
+def consonant_swap (secret_agent)
+	p secret_agent
+end
+
+secret_agent = "Felicia Torres"
+secret_agent = name_swap(secret_agent)
+secret_agent = vowel_swap(secret_agent)
+consonant_swap(secret_agent)
 # GOAL "Felicia Torres" will become "Vussit Gimodoe", 
