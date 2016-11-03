@@ -18,6 +18,14 @@ def downcase_string (secret_name)
 	secret_name.downcase!
 end
 
+def join_capitalize (secret_name)
+	secret_name = secret_name.join('')
+	secret_name = secret_name.split(' ')
+	#loop through secret_name and capitialize
+	secret_name.map!{|letter| letter.capitalize}
+	secret_name = secret_name.join(' ')
+end
+
 def name_swap (secret_name)
 	secret_name = secret_name.split(' ')
 	secret_name = secret_name.reverse
@@ -51,7 +59,7 @@ def consonant_swap (secret_name)
 		if letters == " "
 			letters
 		elsif letters == "z"
-			letters.gsub!(/[z]/, "A")
+			letters.gsub!(/[z]/, "a")
 		elsif letters =~ /[aeiou]/
 			letters
 		else 
@@ -60,16 +68,18 @@ def consonant_swap (secret_name)
 				letters.next!
 			end
 		end
-		
+
 	end
+	secret_name
 end
 
 #Method 4 to join and capatlize 
-secret_agent = "Felicia Z Torres"
+secret_agent = "Felicia Torres"
 downcase_string(secret_agent)
 secret_agent = name_swap(secret_agent)
 secret_agent = vowel_swap(secret_agent)
-consonant_swap(secret_agent)
+secret_agent = consonant_swap(secret_agent)
+secret_agent = join_capitalize(secret_agent)
 
 p secret_agent
 # GOAL "Felicia Torres" will become "Vussit Gimodoe", 
