@@ -15,7 +15,10 @@
 
 #Method 1 swapping the first and last name
 def name_swap (name)
-	p name
+	name = name.split(' ')
+	name = name.reverse
+	name = name.join(' ')
+	name
 end
 #Method 2 Changing all of the vowels to the next vowel, a becomes e 
 #Method 3 Changing all of the consonants to next consonant
