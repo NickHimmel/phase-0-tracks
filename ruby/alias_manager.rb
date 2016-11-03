@@ -43,13 +43,15 @@ def vowel_swap (secret_name)
 end
 
 #Method 3 Changing all of the consonants to next consonant
-#.next, but if it matches a vowel add another dot next and watch out for spaces
-def consonant_swap (secret_agent)
-	p secret_agent
-	# secret_name.map do |letters|
-	# 	# if != .match(vowels)
-	# 	#.next
-	# end
+#.next, but if it matches a vowel add another .next 
+#edge cases are " " and z
+def consonant_swap (secret_name)
+	p secret_name
+	secret_name.map do |letters|
+		if letters == " "
+			letters
+		end
+	end
 end
 
 #Method 4 to join and capatlize 
