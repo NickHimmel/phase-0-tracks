@@ -73,6 +73,23 @@ def consonant_swap (secret_name)
 	secret_name
 end
 
+def user_input
+	while true
+		puts 'Enter agents full name to get super cool secret agent name. Type \'quit\' to exit'
+		agent_name = gets.chomp
+		downcase_string(agent_name)
+		if agent_name == 'quit'
+			break
+		else
+			agent_name = name_swap(agent_name)
+			agent_name = vowel_swap(agent_name)
+			agent_name = consonant_swap(agent_name)
+			agent_name = join_capitalize(agent_name)
+			p agent_name
+		end
+	end
+end
+
 #Method 4 to join and capatlize 
 secret_agent = "Felicia Torres"
 downcase_string(secret_agent)
@@ -80,6 +97,6 @@ secret_agent = name_swap(secret_agent)
 secret_agent = vowel_swap(secret_agent)
 secret_agent = consonant_swap(secret_agent)
 secret_agent = join_capitalize(secret_agent)
-
+user_input
 p secret_agent
 # GOAL "Felicia Torres" will become "Vussit Gimodoe", 
