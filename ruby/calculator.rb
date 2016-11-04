@@ -30,6 +30,8 @@ loop do
 	user_input = gets.chomp
 	if user_input == 'done'
 		break
+	elsif user_input[0].match(/\d/) == nil
+		puts "your answer included words, please only input numbers"
 	else 
 		conv_input = to_integer(user_input)
 		# p user_input
