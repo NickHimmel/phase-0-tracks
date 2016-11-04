@@ -54,6 +54,7 @@ end
 #.next, but if it matches a vowel add another .next 
 #edge cases are " " and z
 def consonant_swap (secret_name)
+	
 	secret_name.map do |letters|
 		
 		if letters == " "
@@ -74,6 +75,7 @@ def consonant_swap (secret_name)
 end
 
 def user_input
+
 	while true
 		puts 'Enter agents full name to get super cool secret agent name. Type \'quit\' to exit'
 		agent_name = gets.chomp
@@ -88,6 +90,7 @@ def user_input
 			p agent_name
 		end
 	end
+
 end
 
 #Method 4 to join and capatlize 
