@@ -19,13 +19,25 @@ def to_int(user_input)
 	new_string
 end
 
+def calculate_loop
+	# Update your program to allow the user to do as many calculations as they want (so the user might enter 3 + 4, receive the answer, and then enter 7 - 1 as the next calculation, and so on). When the user types "done" instead of a calculation, the program can exit.
+	loop do
+		puts 'Please enter a calculation. num (+, /, -, or *) num2 or \'done\' to exit'
+		user_input = gets.chomp
+		if user_input == 'done'
+			break
+		else 
+			user_input = to_int(user_input)
+			# p user_input
+			p calculator(user_input[0], user_input[1], user_input[2])	
+		end
+
+	end
+end
+
 p calculator(4, '+', 5)
 p calculator(10, '/', 5)
 p calculator(25, '-', 5)
 p calculator(10, '*', 5)
+calculate_loop
 
-puts 'Please enter a calculation. num (+, /, -, or *) num2'
-user_input = gets.chomp
-user_input = to_int(user_input)
-p user_input
-p calculator(user_input[0], user_input[1], user_input[2])
