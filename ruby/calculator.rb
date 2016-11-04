@@ -32,6 +32,7 @@ loop do
 		break
 	elsif user_input[0].match(/\d/) == nil
 		puts "your answer included words, please only input numbers"
+	#you could add a feature that removed white space from in front or behind, you could add a feature that would convert characters to integers if user typed two instead of 2 for instance
 	else 
 		conv_input = to_integer(user_input)
 		# p user_input
