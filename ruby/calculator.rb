@@ -12,32 +12,44 @@ def calculator (integer_1, operator, integer_2)
 	end
 end
 
-def to_int(user_input)
+def to_integer(user_input)
 	new_string = p user_input.split
 	new_string[0] = new_string[0].to_i
 	new_string[2] = new_string[2].to_i
 	new_string
 end
 
-def calculate_loop
-	# Update your program to allow the user to do as many calculations as they want (so the user might enter 3 + 4, receive the answer, and then enter 7 - 1 as the next calculation, and so on). When the user types "done" instead of a calculation, the program can exit.
-	loop do
-		puts 'Please enter a calculation. num (+, /, -, or *) num2 or \'done\' to exit'
-		user_input = gets.chomp
-		if user_input == 'done'
-			break
-		else 
-			user_input = to_int(user_input)
-			# p user_input
-			p calculator(user_input[0], user_input[1], user_input[2])	
-		end
+# Update your program to allow the user to do as many calculations as they want (so the user might enter 3 + 4, receive the answer, and then enter 7 - 1 as the next calculation, and so on). When the user types "done" instead of a calculation, the program can exit.
+# When the user has finished performing calculations, but just before the program exits, print a count of the calculations performed, and a history of all the calculations that have been performed. The printout might look something like this:
+# so you need an array or hash to hold it
 
+finished_calculations = {}
+
+loop do
+	puts 'Please enter a calculation. num (+, /, -, or *) num2 or \'done\' to exit'
+	user_input = gets.chomp
+	if user_input == 'done'
+		break
+	else 
+		conv_input = to_integer(user_input)
+		# p user_input
+		user_answer = calculator(conv_input[0], conv_input[1], conv_input[2])
+		p user_answer	
+		finished_calculations[user_input] = user_answer
+		p finished_calculations
 	end
+	finished_calculations
 end
 
-p calculator(4, '+', 5)
-p calculator(10, '/', 5)
-p calculator(25, '-', 5)
-p calculator(10, '*', 5)
-calculate_loop
+puts "#{finished_calculations.length} calculations performed"
+finished_calculations.each do |calculations, answers|
+	
+	puts "#{calculations} = #{answers}"
+end
+
+# p calculator(4, '+', 5)
+# p calculator(10, '/', 5)
+# p calculator(25, '-', 5)
+# p calculator(10, '*', 5)
+
 
