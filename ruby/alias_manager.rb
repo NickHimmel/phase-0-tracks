@@ -81,7 +81,9 @@ end
 
 #Use a data structure to store the fake names as they are entered. When the user exits the program, iterate through the data structure and print all of the data the user entered. A sentence like "Vussit Gimodoe is actually Felicia Torres" or "Felicia Torres is also known as Vussit Gimodoe" for each agent is fine.
 #Create two variables one for the original name and one for the converted name
+#Create an empty hash to hold the names
 #loop to generate name
+names_and_aliases = {}
 loop do
 	puts 'Enter agents full name to get super cool secret agent name. Type \'quit\' to exit'
 	agent_name = gets.chomp
@@ -93,10 +95,11 @@ loop do
 		secret_name = vowel_swap(secret_name)
 		secret_name = consonant_swap(secret_name)
 		secret_name = join_capitalize(secret_name)
-		p secret_name
+		# p secret_name
+		names_and_aliases[agent_name] = secret_name
 	end
 end
-
+p names_and_aliases
 
 
 #first test they gave us
