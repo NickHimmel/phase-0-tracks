@@ -99,8 +99,10 @@ loop do
 		names_and_aliases[agent_name] = secret_name
 	end
 end
-p names_and_aliases
-
+# p names_and_aliases
+names_and_aliases.each do |name, secret_name|
+	puts "#{name} is also known as #{secret_name}"
+end
 
 #first test they gave us
 # secret_agent = "Felicia Torres"
