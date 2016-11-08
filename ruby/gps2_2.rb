@@ -32,9 +32,11 @@
 # output: revised list with item deleted
 
 # Method to update the quantity of an item
-# input:
-# steps:
-# output:
+# input: You passing in the shopping list, the item you want to update and the quantity. You are passing in a hash, a string and an integer.
+# steps: We are going to create a method called update_quantity.
+# Overide the value of the key by setting it equal to the new quantity. 
+# IF item does not exist in the list don't add the item. We will create an if statement and the key is nil we won't update the hash. 
+# output: The updated list with the new quantity.
 
 # Method to print a list and make it look pretty
 # input:
@@ -67,10 +69,19 @@ def delete_item(list, delete_item)
     list
 end
 
+def update_quantity(list, item, quantity)
+	if list[item] != nil
+		list[item] = quantity
+	end
+	list
+end
+
 inputted_list = "bananas tomatoes apples bread"
 
 list = add_items(inputted_list)
 new_item(list, "bananas", 5)
 p list
 delete_item(list, "bananas")
+update_quantity(list, "pizzas", 5)
+update_quantity(list, "tomatoes", 15)
 p list
