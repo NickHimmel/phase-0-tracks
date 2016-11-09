@@ -1,6 +1,6 @@
 # Method to create a list
-# input: string of items separated by spaces (example: "carrots apples cereal pizza")
-  #Break apart string of items on the space
+# input: string of number then item separated by spaces (example: "carrots apples")
+# Break apart string of items on the space
 # steps: 
 # Create an empty item array to hold items for list
 # Call each on the item array to turn each value into a key for the hash
@@ -18,7 +18,7 @@
 # Make the new item a new key with default value of 1 and add it to the master list
 # IF there is a integer add it as the value of the new item
 # First check if there is integer 
-#   IF not integer default would be 1
+# IF not integer default would be 1
 # output: finished list with added item and its quantity
 
 # Method to remove an item from the list
@@ -27,8 +27,8 @@
 # Create a method that takes two parameters (hash and key)
 # Check to see if item to be deleted is already in the list 
 # Iterate through the hash to see if the item already exists 
-    # IF the item exists, delete it
-    # IF item doesn't exist, return a message that says "Item not found"
+  # IF the item exists, delete it
+  # IF item doesn't exist, return a message that says "Item not found"
 # output: revised list with item deleted
 
 # Method to update the quantity of an item
@@ -39,49 +39,67 @@
 # output: The updated list with the new quantity.
 
 # Method to print a list and make it look pretty
-# input:
-# steps:
-# output:
+# input: Input the list
+# steps: 
+# Define a method called print_list
+# Print "You shopping list:" to the console and a line separating the message from the list to make it user friendly
+# Iterate through the hash to print the item followed by the quantity
+# Print another line to separate the information to make the list reader friendly
+# Call the method and pass in the list
+# output: The list with items and quanitities printed in individual lines for reader friendliness starting with the message "Your shopping list:"
 
 def add_items(inputted_list) 
-     list = {}
-  list_array = inputted_list.split(' ')
-  
-  list_array.each do |item|
-      list[item] = 1
+   list = {}
+list_array = inputted_list.split(' ')
+
+list_array.each do |item|
+    list[item] = 1
+end
+list
+end
+
+def new_item(list, item, quantity=1)
+ if list[item] == nil
+     list[item] = quantity 
+ end
+ list
+end
+
+def delete_item(list, delete_item)
+  list.each do |item, quantity|
+      if list[item] == list[delete_item]
+          list.delete(item)
+      end
   end
   list
 end
 
-def new_item(list, item, quantity=1)
-   if list[item] == nil
-       list[item] = quantity 
+def update_quantity(list, item, quantity)
+   if list[item] != nil
+       list[item] = quantity
    end
    list
 end
 
-def delete_item(list, delete_item)
-    list.each do |item, quantity|
-        if list[item] == list[delete_item]
-            list.delete(item)
-        end
+def print_list(shopping_list)
+    puts "Your shopping list:"
+    puts "------------------------"
+    shopping_list.each do |item, quantity|
+        puts "#{item}: #{quantity}"
     end
-    list
+    puts "------------------------"
 end
 
-def update_quantity(list, item, quantity)
-	if list[item] != nil
-		list[item] = quantity
-	end
-	list
-end
-
-inputted_list = "bananas tomatoes apples bread"
+inputted_list = "bananas apples cereal"
 
 list = add_items(inputted_list)
-new_item(list, "bananas", 5)
+new_item(list, "lemonade", 2)
+new_item(list, "tomatoes", 3)
+new_item(list, "onions", 1)
+new_item(list, "ice cream", 4)
 p list
-delete_item(list, "bananas")
-update_quantity(list, "pizzas", 5)
-update_quantity(list, "tomatoes", 15)
+delete_item(list, "lemonade")
 p list
+update_quantity(list, "ice cream", 1)
+p list
+print_list(list)
