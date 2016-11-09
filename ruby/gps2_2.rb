@@ -18,7 +18,7 @@
 # Make the new item a new key with default value of 1 and add it to the master list
 # IF there is a integer add it as the value of the new item
 # First check if there is integer 
-# IF not integer default would be 1
+#   IF not integer default would be 1
 # output: finished list with added item and its quantity
 
 # Method to remove an item from the list

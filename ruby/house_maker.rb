@@ -48,7 +48,8 @@ end
 rooms = ['Living room', 'bedroom', 'bathroom', 'kitchen', 'bedroom 2', 'bedroom 3']
 
 rooms.each do |room|
-	add_room_to_house!(house, room)
+	room_added = add_room_to_house!(house, room)
+	
 end
 
 print_house(house)
