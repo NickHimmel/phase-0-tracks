@@ -60,12 +60,13 @@ class Santa
 
 end
 
-santas = []
 example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
 example_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
 
 100.times do |i|
+	p Santa.new(example_genders.sample, example_ethnicities.sample)
 end
+
 p santas
 
 # santas = []
