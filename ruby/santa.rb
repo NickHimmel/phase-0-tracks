@@ -1,4 +1,7 @@
 class Santa
+	attr_reader :age, :ethnicity
+	attr_accessor :gender
+	# attr_writer :name 
 
 	def initialize(gender, ethnicity)
 		@gender = gender
@@ -8,6 +11,24 @@ class Santa
 
 		puts "Initialize Santa instance"
 	end
+
+	#getter methods
+	# def age 
+	# 	@age
+	# end
+
+	# def ethnicity
+	# 	@ethnicity
+	# end
+
+	# def gender
+	# 	@gender
+	# end 
+
+	#setter methods
+	# def gender=(new_gender)
+	# 	@gender = new_gender
+	# end
 
 	def speak
 		puts "Ho, ho, ho! Haaaappy holidays!"
@@ -36,24 +57,16 @@ class Santa
 		puts "Bad #{reindeer}, you know what you did! To the back of the list with you!"
 		puts "My new list is: #{@reindeer_ranking}"
 	end
-	#getter methods
-	def age 
-		@age
-	end
 
-	def ethnicity
-		@ethnicity
-	end
-
-	def gender
-		@gender
-	end 
-
-	#setter methods
-	def gender=(new_gender)
-		@gender = new_gender
-	end
 end
+
+santas = []
+example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
+example_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
+
+100.times do |i|
+end
+p santas
 
 # santas = []
 # santas << Santa.new("agender", "black")
@@ -72,16 +85,16 @@ end
 # end
 # p santas
 
-Kris_Kringle = Santa.new("male", "white")
-Kris_Kringle.get_mad_at("Vixen")
-puts "Kris Kringle is #{Kris_Kringle.age} years old and a #{Kris_Kringle.ethnicity} #{Kris_Kringle.gender}"
-Kris_Kringle.gender = "female"
-# Kris_Kringle.celebrate_birthday
-27.times do 
-	Kris_Kringle.celebrate_birthday
-end
-puts "Kris Kringle is #{Kris_Kringle.age} years old and a #{Kris_Kringle.ethnicity} #{Kris_Kringle.gender}"
-# Kris_Kringle = Santa.new
+# Kris_Kringle = Santa.new("male", "white")
+# Kris_Kringle.get_mad_at("Vixen")
+# puts "Kris Kringle is #{Kris_Kringle.age} years old and a #{Kris_Kringle.ethnicity} #{Kris_Kringle.gender}"
+# Kris_Kringle.gender = "female"
+# # Kris_Kringle.celebrate_birthday
+# 27.times do 
+# 	Kris_Kringle.celebrate_birthday
+# end
+# puts "Kris Kringle is #{Kris_Kringle.age} years old and a #{Kris_Kringle.ethnicity} #{Kris_Kringle.gender}"
+# # Kris_Kringle = Santa.new
 # St_Nick = Santa.new
 # Father_Christmas = Santa.new
 
