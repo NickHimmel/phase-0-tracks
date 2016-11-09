@@ -66,16 +66,12 @@ def new_item(list, item, quantity=1)
 end
 
 def delete_item(list, delete_item)
-  list.each do |item, quantity|
-      if list[item] == list[delete_item]
-          list.delete(item)
-      end
-  end
+  list.delete(delete_item)
   list
 end
 
 def update_quantity(list, item, quantity)
-   if list[item] != nil
+   if list[item] 
        list[item] = quantity
    end
    list
