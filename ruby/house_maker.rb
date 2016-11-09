@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #HOUSE MAKER
 
 #Allow the user to create a house,
@@ -118,3 +119,5 @@ print_house(house)
 # 	add_item_to_room!(house, room, "cat") if room_added
 # end
 >>>>>>> house_maker
+=======
+>>>>>>> gps2_2-ruby
