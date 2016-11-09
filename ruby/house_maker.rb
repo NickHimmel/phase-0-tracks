@@ -18,20 +18,45 @@ def add_room_to_house!(house, room_name)
 	end
 end
 
+def add_item_to_room!(house, room_name, item_name)
+	house[room_name] << item_name
+end
+
 house = {}
 
 #USER INTERFACE
 
 def print_house(house)
-	p house
+	puts "------------------"
+	puts "Current house configuration:"
+	house.each do |room_name, items|
+		puts "#{room_name}: #{items}"
+	end
+	puts "------------------"
 end
+
+# Let the user add rooms
+can_add_rooms = true
+# Stop loop when rooms cannot be added
+
+while can_add_rooms
+	# Get a room name from the user
+	puts "Type the name of a room to add (or type 'done'):"
+	room_name = gets.chomp
+	# If the user is done, stop loop
+	break if room_name == 'done'
+	# Otherwise, add the room to the house
+	can_add_rooms = add_room_to_house!(house, room_name)
+	print_house(house)
+end
+
+
 
 # TEST CODE
 
-rooms = ['Living room', 'bedroom', 'bathroom', 'kitchen', 'bedroom 2', 'bedroom 3']
+# rooms = ['Living room', 'bedroom', 'bathroom', 'kitchen', 'bedroom 2', 'bedroom 3']
 
-rooms.each do |room|
-	add_room_to_house!(house, room)
-end
-
-print_house(house)
+# rooms.each do |room|
+# 	room_added = add_room_to_house!(house, room)
+# 	add_item_to_room!(house, room, "cat") if room_added
+# end
