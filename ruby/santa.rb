@@ -1,6 +1,6 @@
 class Santa
-	attr_reader :age, :ethnicity
-	attr_accessor :gender
+	attr_reader :ethnicity
+	attr_accessor :gender, :age
 	# attr_writer :name 
 
 	def initialize(gender, ethnicity)
@@ -64,10 +64,12 @@ example_genders = ["agender", "female", "bigender", "male", "female", "gender fl
 example_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
 
 100.times do |i|
-	p Santa.new(example_genders.sample, example_ethnicities.sample)
+	newSanta = Santa.new(example_genders.sample, example_ethnicities.sample)
+	newSanta.age = rand(140)
+	p newSanta
 end
 
-p santas
+# p santas
 
 # santas = []
 # santas << Santa.new("agender", "black")
