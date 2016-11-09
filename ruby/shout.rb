@@ -15,11 +15,11 @@
 module Shout
 
 	 def yell_angrily(words)
-	 	words + "!!!" + " :-("
+	 	words.upcase + "!!!" + " :-("
 	 end
 
 	 def yell_happily(words)
-	 	words + "!!!" + " :-)"
+	 	words.upcase + "!!!" + " :-)"
 	 end
 
 end
@@ -33,4 +33,6 @@ class Toddler
 end
 
 Grampa = Grumpy_old_man.new
-Grampa.yell_angrily("I am mad as hell and I am not going to take it anymore")
+p Grampa.yell_angrily("I am mad as hell and I am not going to take it anymore")
+Max = Toddler.new
+p Max.yell_happily("more more more more")
