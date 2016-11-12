@@ -26,13 +26,15 @@
 
 
 # 	Create Method for Word_to_guess with a parameter for the user_word
+# 		User_word set to downcase
 # Set Answer_word equal to the user_word split into an array of characters 
 # Set number_guess equal to length of answer_word
 # If answer_word contains characters throw an error, set game_over to 3 and tell the user to try again. 
 
 
 # 	Create Method for Secret_word
-# 		Shovel to word_hidden the  “_” characters equal to the length of Answer_word
+# 		Using times set to to the length of Answer_word shovel to word_hidden the  “_” 
+# characters equal 
 
 
 # Create Method for Check_guess with a parameter for the user_guess
