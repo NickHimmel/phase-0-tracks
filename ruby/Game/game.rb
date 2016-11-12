@@ -32,18 +32,20 @@
 # If answer_word contains characters throw an error, set game_over to 3 and tell the user to try again. 
 
 
-# 	Create Method for Secret_word
+# 	Create Method for Secret_word 
 # 		Using times set to to the length of Answer_word shovel to word_hidden the  “_” 
 # characters equal 
 
 
 # Create Method for Check_guess with a parameter for the user_guess
 # 	guess count += 1
-# 	If answer_word include? user_guess is true
-# 		Loop through answer_word with each
+# 	If answer_word include? user_guess is true then call method for Update_word
+	
+	
+# 	Create Method for Update_word with parameter for the user_guess
+# 	Loop through answer_word with each
 # 			If answer_word[at that index] is equal to user_guess then 
 # Word_hidden[at that index] is equal to answer_word[at that index]
-	
 # 	Create Method for Check_if_Won
 # 		If word_hidden does not include? “_” then set game_over to 1
 	

@@ -1,17 +1,24 @@
 require_relative 'game'
 
 describe WordGame do
-  # let(:calculator) { Calculator.new }
+  let(:WordGame) { WordGame.new }
 
-  # it "adds two integers" do
-  #   expect(calculator.add(3,4)).to eq 7
-  # end
+  it "turns a string into an array" do
+  end
 
-  # it "subtracts two integers" do
-  #   expect(calculator.subtract(7,1)).to eq 6
-  # end
+  it "makes a new array" do
+  end
 
-  # it "multiplies two integers" do
-  #   expect(calculator.multiply(2,3)).to eq 6
-  # end
+
+  it " "  
+  end
+
+  it "checks to see if you won" do
+
+  end
+
+  it "checks to see if you lost" do
+
+  end
+
 end
