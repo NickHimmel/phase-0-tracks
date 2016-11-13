@@ -69,10 +69,21 @@ class WordGame
 	end
 
 # 	Create Method for Update_word with parameter for the user_guess
-# 		Loop through answer_word with each
+# 		Loop through answer_word 
 # 			If answer_word[at that index] is equal to user_guess then 
-# 		Word_hidden[at that index] is equal to answer_word[at that index]
-# 
+# 			Word_hidden[at that index] is equal to answer_word[at that index]
+	def update_word(user_guess)
+		i = 0
+		p user_guess
+		while i < @number_guess
+			if @answer_word[i] == user_guess
+				@word_hidden[i] = user_guess
+			end
+		i += 1
+		end
+		@word_hidden
+	end
+
 # 	Create Method for Check_if_Won
 # 		If word_hidden does not include? “_” then set game_over to 1
 	
@@ -114,4 +125,4 @@ end
 new_game = WordGame.new 
 new_game.word_to_guess('Unicorn')
 new_game.secret_word
-new_game.check_guess('z')
+new_game.check_guess('u')
