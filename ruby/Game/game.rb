@@ -54,14 +54,20 @@ class WordGame
 		@number_guess.times do 
 			@word_hidden << "_"
 		end
-		# p word_hidden
 		@word_hidden
 	end
 
 # 	Create Method for Check_guess with a parameter for the user_guess
 # 		Add 1 to guess_count (+= 1)
 # 			If answer_word includes (include?) user_guess (true) then call the method Update_word and pass in user_guess
-	
+	def check_guess(user_guess)
+		@guess_count += 1
+		if @answer_word.include?(user_guess)
+			update_word(user_guess)
+		end
+		@guess_count
+	end
+
 # 	Create Method for Update_word with parameter for the user_guess
 # 		Loop through answer_word with each
 # 			If answer_word[at that index] is equal to user_guess then 
@@ -108,3 +114,4 @@ end
 new_game = WordGame.new 
 new_game.word_to_guess('Unicorn')
 new_game.secret_word
+new_game.check_guess('z')
