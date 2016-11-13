@@ -19,6 +19,7 @@ class WordGame
 	attr_reader :guess_count
 	attr_reader :number_guess
 	attr_reader :game_over
+	attr_reader :answer_word
 
 # 	Create initialize method 
 # 		Need attributes for
@@ -40,7 +41,10 @@ class WordGame
 # 		Set Answer_word equal to the user_word split into an array of characters 
 # 		Set number_guess equal to length of answer_word
 # 		If answer_word contains characters throw an error, set game_over to 3 and tell the user to try again. 
-
+	def word_to_guess (user_word)
+		user_word.downcase!
+		@answer_word = user_word.split("")
+	end
 
 # 	Create Method for Secret_word 
 # 		Using times set to to the length of Answer_word shovel to word_hidden the  “_” 
@@ -94,3 +98,5 @@ end
 # 	You lose, haha!
 
 #TEST CODE-----------------------------------------------
+new_game = WordGame.new 
+new_game.word_to_guess('Unicorn')

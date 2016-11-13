@@ -1,10 +1,10 @@
 require_relative 'game'
 
 describe WordGame do
-  let(:WordGame) { WordGame.new }
+  let(:word_game) { WordGame.new }
 
   it "turns a string into an array" do
-    expect(WordGame.word_to_guess).to be_an_instance_of(Array)
+    expect(word_game.word_to_guess('unicorn')).to be_an_instance_of(Array)
   end
 
   it "makes a new array with the word hidden" do
