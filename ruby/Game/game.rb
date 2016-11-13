@@ -43,13 +43,20 @@ class WordGame
 # 		If answer_word contains characters throw an error, set game_over to 3 and tell the user to try again. 
 	def word_to_guess (user_word)
 		user_word.downcase!
+		@number_guess = user_word.length
 		@answer_word = user_word.split("")
 	end
 
 # 	Create Method for Secret_word 
 # 		Using times set to to the length of Answer_word shovel to word_hidden the  “_” 
 # 		characters equal 
-
+	def secret_word
+		@number_guess.times do 
+			@word_hidden << "_"
+		end
+		# p word_hidden
+		@word_hidden
+	end
 
 # 	Create Method for Check_guess with a parameter for the user_guess
 # 		Add 1 to guess_count (+= 1)
@@ -100,3 +107,4 @@ end
 #TEST CODE-----------------------------------------------
 new_game = WordGame.new 
 new_game.word_to_guess('Unicorn')
+new_game.secret_word

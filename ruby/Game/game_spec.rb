@@ -8,7 +8,7 @@ describe WordGame do
   end
 
   it "makes a new array with the word hidden" do
-    expect(word_game.secret_word).to be_an_instance_of(Array).to include("_")
+    expect(word_game.secret_word).to be_an_instance_of(Array)
   end
 
   it "checks if you guessed correctly" do 
@@ -16,7 +16,7 @@ describe WordGame do
   end
 
   it "updates the hidden word if you guessed correctly" do
-    expect(word_game.update_word).to be_an_instance_of(Array).to include([a-z])
+    expect(word_game.update_word).to be_an_instance_of(Array)
   end
 
   it "checks to see if you won" do
