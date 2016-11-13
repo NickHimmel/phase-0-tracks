@@ -15,11 +15,8 @@ class WordGame
 # 		Game_over
 # 		word_hidden 
 # 		Number_guess	
-	attr_reader :word_hidden 
-	attr_reader :guess_count
-	attr_reader :number_guess
-	attr_reader :game_over
-	attr_reader :answer_word
+	attr_reader :word_hidden, :guess_count, :number_guess, :game_over, :answer_word
+
 
 # 	Create initialize method 
 # 		Need attributes for
@@ -54,7 +51,7 @@ class WordGame
 		@number_guess.times do 
 			@word_hidden << "_"
 		end
-		p @word_hidden
+		@word_hidden
 	end
 
 # 	Create Method for Check_guess with a parameter for the user_guess
@@ -84,9 +81,9 @@ class WordGame
 	end
 
 # 	Create Method for Check_if_Won
-# 		If word_hidden does not include (include?) “_” then set game_over to 1
+# 		if @word_hidden is equal to @answer_word
 	def check_if_won
-		if @word_hidden.include?("_") == nil
+		if @word_hidden == @answer_word
 			@game_over = 1
 		end
 		@game_over
@@ -94,7 +91,7 @@ class WordGame
 # 	Create Method for Check_if_Lost
 # 		If guess_count is equal to number_guess set game_over to 2
 	def check_if_lost
-		if @guess_count == @number_guess
+		if @guess_count == @number_guess + 1
 			@game_over = 2
 		end
 		@game_over
@@ -111,7 +108,8 @@ new_game = WordGame.new
 
 puts "-------------------------------------------------------------"
 puts "Guess the Word Game "
-puts "Player One enters a word, Player Two tries to guest it"
+puts "Player One enters a word"
+puts "Player Two tries to guess it one letter at a time"
 puts "Player Two has only as many guess as the length of the word"
 puts "-------------------------------------------------------------"
 
@@ -120,10 +118,10 @@ puts "-------------------------------------------------------------"
 # call  Word_to_guess and pass in user_word
 # Call  Secret_word
 
-puts "Player One enter a word"
+puts "Player One enter a word: "
 user_word = gets.chomp
 new_game.word_to_guess(user_word)
-new_game.secret_word
+new_game.secret_word 
 
 # Create a while loop, while game_over = 0
 # Show Player Two the word_hidden,
@@ -134,6 +132,18 @@ new_game.secret_word
 # Call Check_if_Won
 # Call Check_if_Lost
 
+# while :game_over = 0
+# 	puts 
+# end
+while new_game.game_over == 0
+	puts "Player Two the word to guess is: #{new_game.word_hidden.join(' ')}"
+	puts "Player Two has #{new_game.guess_count} guesses out of #{new_game.number_guess} guesses"
+	puts "Player Two which letter do you guess?"
+	user_guess = gets.chomp
+	new_game.check_guess(user_guess)
+	new_game.check_if_won
+	new_game.check_if_lost
+end
 # When loop breaks 
 
 
@@ -141,6 +151,11 @@ new_game.secret_word
 # 	You win!
 # If game_over = 2
 # 	You lose, haha!
+if new_game.game_over == 1
+	puts "Player Two wins!"
+elsif new_game.game_over == 2
+	puts "Player Two loses, Ha Ha!"
+end
 
 #TEST CODE-----------------------------------------------
 # new_game = WordGame.new 
