@@ -54,7 +54,7 @@ class WordGame
 		@number_guess.times do 
 			@word_hidden << "_"
 		end
-		@word_hidden
+		p @word_hidden
 	end
 
 # 	Create Method for Check_guess with a parameter for the user_guess
@@ -74,7 +74,6 @@ class WordGame
 # 			Word_hidden[at that index] is equal to answer_word[at that index]
 	def update_word(user_guess)
 		i = 0
-		p user_guess
 		while i < @number_guess
 			if @answer_word[i] == user_guess
 				@word_hidden[i] = user_guess
@@ -103,17 +102,28 @@ class WordGame
 end
 
 # --User Interface
+new_game = WordGame.new 
+
 # Print user experience messages. 
 # 	Welcome to the game
 # 	These are the rules
 # 	Starting the game
 
+puts "-------------------------------------------------------------"
+puts "Guess the Word Game "
+puts "Player One enters a word, Player Two tries to guest it"
+puts "Player Two has only as many guess as the length of the word"
+puts "-------------------------------------------------------------"
 
 # Ask Player one for a word that player two has to guess
 # Store that word in user_word
 # call  Word_to_guess and pass in user_word
 # Call  Secret_word
 
+puts "Player One enter a word"
+user_word = gets.chomp
+new_game.word_to_guess(user_word)
+new_game.secret_word
 
 # Create a while loop, while game_over = 0
 # Show Player Two the word_hidden,
@@ -133,7 +143,7 @@ end
 # 	You lose, haha!
 
 #TEST CODE-----------------------------------------------
-new_game = WordGame.new 
-new_game.word_to_guess('Unicorn')
-new_game.secret_word
-new_game.check_guess('u')
+# new_game = WordGame.new 
+# new_game.word_to_guess('Unicorn')
+# new_game.secret_word
+# new_game.check_guess('u')
