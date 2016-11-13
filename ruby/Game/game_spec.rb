@@ -20,11 +20,11 @@ describe WordGame do
   end
 
   it "checks to see if you won" do
-    expect(word_game.check_if_won).should be_kind_of(Integer) 
+    expect(word_game.check_if_won).to be_a(Integer) 
   end
 
   it "checks to see if you lost" do
-    expect(word_game.check_if_lost).should be_kind_of(Integer) 
+    expect(word_game.check_if_lost).to be_a(Integer) 
   end
 
 end
