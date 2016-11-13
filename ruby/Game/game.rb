@@ -88,12 +88,18 @@ class WordGame
 # 		If word_hidden does not include (include?) “_” then set game_over to 1
 	def check_if_won
 		if @word_hidden.include?("_") == nil
-			@game_over += 1
+			@game_over = 1
 		end
 		@game_over
 	end
 # 	Create Method for Check_if_Lost
 # 		If guess_count is equal to number_guess set game_over to 2
+	def check_if_lost
+		if @guess_count == @number_guess
+			@game_over = 2
+		end
+		@game_over
+	end
 end
 
 # --User Interface
