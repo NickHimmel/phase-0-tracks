@@ -13,13 +13,13 @@
 # 		Guess_count
 # 		Game_over
 # 		word_hidden 
-# Number_guess	
+# 		Number_guess	
 
 
 # 	Create initialize method 
 # 		Need attributes for
 # 			Guess_count  is equal to zero
-# Number_guess is equal to zero
+# 			Number_guess is equal to zero
 # 			Game_over is set to 0
 # 			Word_hidden is an empty array
 # 			Answer_word is an empty array
@@ -27,25 +27,25 @@
 
 # 	Create Method for Word_to_guess with a parameter for the user_word
 # 		User_word set to downcase
-# Set Answer_word equal to the user_word split into an array of characters 
-# Set number_guess equal to length of answer_word
-# If answer_word contains characters throw an error, set game_over to 3 and tell the user to try again. 
+# 		Set Answer_word equal to the user_word split into an array of characters 
+# 		Set number_guess equal to length of answer_word
+# 		If answer_word contains characters throw an error, set game_over to 3 and tell the user to try again. 
 
 
 # 	Create Method for Secret_word 
-# 		Using times set to to the length of Answer_word shovel to word_hidden the  “_” 
-# characters equal 
+# 	Using times set to to the length of Answer_word shovel to word_hidden the  “_” 
+# 	characters equal 
 
 
-# Create Method for Check_guess with a parameter for the user_guess
-# 	guess count += 1
-# 	If answer_word include? user_guess is true then call method for Update_word
-	
+# 	Create Method for Check_guess with a parameter for the user_guess
+# 		Add 1 to guess_count (+= 1)
+# 			If answer_word includes (include?) user_guess (true) then call the method Update_word and pass in user_guess
 	
 # 	Create Method for Update_word with parameter for the user_guess
-# 	Loop through answer_word with each
+# 		Loop through answer_word with each
 # 			If answer_word[at that index] is equal to user_guess then 
-# Word_hidden[at that index] is equal to answer_word[at that index]
+# 		Word_hidden[at that index] is equal to answer_word[at that index]
+# 
 # 	Create Method for Check_if_Won
 # 		If word_hidden does not include? “_” then set game_over to 1
 	
