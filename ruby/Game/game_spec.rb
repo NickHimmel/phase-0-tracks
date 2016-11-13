@@ -11,7 +11,7 @@ describe WordGame do
     expect(WordGame.secret_word).to be_an_instance_of(Array).to include("_")
   end
 
-  it "checks if you guessed correctly"  
+  it "checks if you guessed correctly" do 
     expect(WordGame.check_guess).should be_kind_of(Integer) 
   end
 

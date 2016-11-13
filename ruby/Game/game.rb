@@ -6,9 +6,10 @@
 
 
 # --Class
-
-
 # Create class WordGame
+class WordGame
+
+
 # 	Need attr_reader values for 
 # 		Guess_count
 # 		Game_over
@@ -51,7 +52,7 @@
 	
 # 	Create Method for Check_if_Lost
 # 		If guess_count is equal to answer_word set game_over to 2
-
+end
 
 # --User Interface
 # Print user experience messages. 
