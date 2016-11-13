@@ -15,7 +15,10 @@ class WordGame
 # 		Game_over
 # 		word_hidden 
 # 		Number_guess	
-
+	attr_reader :word_hidden 
+	attr_reader :guess_count
+	attr_reader :number_guess
+	attr_reader :game_over
 
 # 	Create initialize method 
 # 		Need attributes for
@@ -24,7 +27,13 @@ class WordGame
 # 			Game_over is set to 0
 # 			Word_hidden is an empty array
 # 			Answer_word is an empty array
-
+	def initialize
+		@answer_word = [];
+		@word_hidden = [];
+		@guess_count = 0;
+		@number_guess = 0;
+		@game_over = 0;
+	end
 
 # 	Create Method for Word_to_guess with a parameter for the user_word
 # 		User_word set to downcase
@@ -34,8 +43,8 @@ class WordGame
 
 
 # 	Create Method for Secret_word 
-# 	Using times set to to the length of Answer_word shovel to word_hidden the  “_” 
-# 	characters equal 
+# 		Using times set to to the length of Answer_word shovel to word_hidden the  “_” 
+# 		characters equal 
 
 
 # 	Create Method for Check_guess with a parameter for the user_guess
@@ -51,7 +60,7 @@ class WordGame
 # 		If word_hidden does not include? “_” then set game_over to 1
 	
 # 	Create Method for Check_if_Lost
-# 		If guess_count is equal to answer_word set game_over to 2
+# 		If guess_count is equal to number_guess set game_over to 2
 end
 
 # --User Interface
@@ -83,3 +92,5 @@ end
 # 	You win!
 # If game_over = 2
 # 	You lose, haha!
+
+#TEST CODE-----------------------------------------------

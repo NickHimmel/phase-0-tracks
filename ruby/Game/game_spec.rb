@@ -16,7 +16,7 @@ describe WordGame do
   end
 
   it "updates the hidden word if you guessed correctly" do
-    expect(WordGame.update_word).to be_an_instance_of(Array)
+    expect(WordGame.update_word).to be_an_instance_of(Array).to include([a-z])
   end
 
   it "checks to see if you won" do
