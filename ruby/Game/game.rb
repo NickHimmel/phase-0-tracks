@@ -28,6 +28,7 @@ class WordGame
 	def initialize
 		@answer_word = [];
 		@word_hidden = [];
+		@guessed_words = [];
 		@guess_count = 0;
 		@number_guess = 0;
 		@game_over = 0;
@@ -56,14 +57,24 @@ class WordGame
 
 # 	Create Method for Check_guess with a parameter for the user_guess
 # 		Add 1 to guess_count (+= 1)
+# 			check to see if a player has guessed this word before my calling words_guessed method
 # 			If answer_word includes (include?) user_guess (true) then call the method Update_word and pass in user_guess
+# 			else print out message that says the guess is wrong 
 	def check_guess(user_guess)
 		@guess_count += 1
 		if @answer_word.include?(user_guess)
 			update_word(user_guess)
+		else 
+			puts "WRONG! That letter is not in the word! Try again:"
 		end
 		@guess_count
 	end
+
+# 	Create Method words_guessed to check if the user has guessed that word before.
+# 		If guess count is 1 then it is the users first guess so push guess to @guessed_words
+		# Else use each to loop over @guessed_words to compare to users guess
+		# If they have guessed that word @guess_count minus 1
+
 
 # 	Create Method for Update_word with parameter for the user_guess
 # 		Loop through answer_word 
@@ -138,8 +149,11 @@ new_game.secret_word
 while new_game.game_over == 0
 	puts "Player Two the word to guess is: #{new_game.word_hidden.join(' ')}"
 	puts "Player Two has #{new_game.guess_count} guesses out of #{new_game.number_guess} guesses"
-	puts "Player Two which letter do you guess?"
+	puts "Player Two which letter do you guess? Or type 'done' to exit"
 	user_guess = gets.chomp
+	if user_guess == "done"
+		break
+	end
 	new_game.check_guess(user_guess)
 	new_game.check_if_won
 	new_game.check_if_lost
