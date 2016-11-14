@@ -1,6 +1,7 @@
 class Dancer
 
-	attr_reader :name, :age
+	attr_reader :name
+	attr_accessor :age
 
 	def initialize(name, age)
 		@name = name
