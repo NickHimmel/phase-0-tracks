@@ -15,7 +15,7 @@ class WordGame
 # 		Game_over
 # 		word_hidden 
 # 		Number_guess	
-	attr_reader :word_hidden, :guess_count, :number_guess, :game_over, :answer_word
+	attr_reader :word_hidden, :guess_count, :number_guess, :game_over, :answer_word, :guessed_letters
 
 
 # 	Create initialize method 
@@ -28,7 +28,7 @@ class WordGame
 	def initialize
 		@answer_word = [];
 		@word_hidden = [];
-		@guessed_words = [];
+		@guessed_letters = [];
 		@guess_count = 0;
 		@number_guess = 0;
 		@game_over = 0;
@@ -60,21 +60,36 @@ class WordGame
 # 			check to see if a player has guessed this word before my calling words_guessed method
 # 			If answer_word includes (include?) user_guess (true) then call the method Update_word and pass in user_guess
 # 			else print out message that says the guess is wrong 
+
 	def check_guess(user_guess)
 		@guess_count += 1
+		letter_guessed(user_guess)
 		if @answer_word.include?(user_guess)
 			update_word(user_guess)
+			puts "-- RIGHT ON! #{user_guess} is in the word! Keep going! --"
 		else 
-			puts "WRONG! That letter is not in the word! Try again:"
+			puts "-- WRONG! That letter is not in the word! Try again: --"
 		end
 		@guess_count
 	end
 
-# 	Create Method words_guessed to check if the user has guessed that word before.
-# 		If guess count is 1 then it is the users first guess so push guess to @guessed_words
-		# Else use each to loop over @guessed_words to compare to users guess
-		# If they have guessed that word @guess_count minus 1
+# 	Create Method letter_guessed to check if the user has guessed that word before.
+# 		If there are no guessed letters (length of guessed_letters = 0) then push the first guess to @guessed_words
+#       if the guessed letter is included (include?) in the guessed letters array, then tell the user and subtract one from guess count
+# 		else shovel the user guess to the guessed_letters array
 
+	def letter_guessed(user_guess)
+		if @guessed_letters.length == 0
+			@guessed_letters << user_guess
+		else 
+			if @guessed_letters.include?(user_guess)
+				puts "--You already guessed that letter! Try again!--"
+				@guess_count -= 1
+			else
+				@guessed_letters << user_guess
+			end
+		end
+	end
 
 # 	Create Method for Update_word with parameter for the user_guess
 # 		Loop through answer_word 
@@ -147,6 +162,7 @@ new_game.secret_word
 # 	puts 
 # end
 while new_game.game_over == 0
+	puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 	puts "Player Two the word to guess is: #{new_game.word_hidden.join(' ')}"
 	puts "Player Two has #{new_game.guess_count} guesses out of #{new_game.number_guess} guesses"
 	puts "Player Two which letter do you guess? Or type 'done' to exit"
@@ -165,12 +181,15 @@ end
 # 	You win!
 # If game_over = 2
 # 	You lose, haha!
+puts "-------------------------------------------------------------"
 if new_game.game_over == 1
 	puts "Player Two wins!"
 elsif new_game.game_over == 2
 	puts "Player Two loses, Ha Ha!"
 end
-
+puts "-- The word was: #{new_game.answer_word} --"
+puts "Your guessed letters were: #{new_game.guessed_letters}"
+puts "-------------------------------------------------------------"
 #TEST CODE-----------------------------------------------
 # new_game = WordGame.new 
 # new_game.word_to_guess('Unicorn')
