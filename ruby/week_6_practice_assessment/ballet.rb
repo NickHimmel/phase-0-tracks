@@ -10,8 +10,14 @@ class Dancer
 
 	def pirouette
 		twirls = "*twirls*"
-		puts "*twirls*"
+		puts twirls
 		twirls
+	end
+
+	def bow
+		bows = "*bows*"
+		puts bows
+		bows
 	end
 
 end
