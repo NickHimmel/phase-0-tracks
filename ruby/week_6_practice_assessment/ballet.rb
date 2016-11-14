@@ -7,4 +7,11 @@ class Dancer
 		@name = name
 		@age = age
 	end
+
+	def pirouette
+		twirls = "*twirls*"
+		puts "*twirls*"
+		twirls
+	end
+
 end
