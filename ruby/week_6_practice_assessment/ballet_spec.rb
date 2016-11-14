@@ -38,5 +38,14 @@ describe Dancer do
     expect(dancer.card).to eq ["Anna Pavlova"]
   end
 
+  it "can limit your dance card to 5 dancers" do
+    dancer.queue_dance_with("Mikhail Baryshnikov")
+    dancer.queue_dance_with("Anna Pavlova")
+    dancer.queue_dance_with("Sterling Hyltin")
+    dancer.queue_dance_with("Sara Mearns")
+    dancer.queue_dance_with("Ashley Bouder")
+    dancer.queue_dance_with("Teresa Reichlen")
+    expect(dancer.card).to eq ["Mikhail Baryshnikov", "Anna Pavlova", "Sterling Hyltin", "Sara Mearns", "Ashley Bouder"]
+  end
 
 end

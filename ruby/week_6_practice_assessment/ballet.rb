@@ -20,7 +20,7 @@ class Dancer
 		puts bows
 		bows
 	end
-
+	# call full_dance_card here to check if dance card if full
 	def queue_dance_with(dancer)
 		@card << dancer
 		dancer
@@ -32,5 +32,7 @@ class Dancer
 		@card.delete_at(0)
 		next_dance
 	end
-
+# create a method full_dance_card that caps your dance card at 5, prints a message that your dance card is filled and deletes the last dancer entered. 
+	# def full_dance_card
+	# end 
 end
