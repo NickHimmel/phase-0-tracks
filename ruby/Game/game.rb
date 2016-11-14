@@ -163,7 +163,7 @@ new_game.secret_word
 # end
 while new_game.game_over == 0
 	puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-	puts "Player Two the word to guess is: #{new_game.word_hidden.join(' ')}"
+	puts "Player Two the word to guess is: #{new_game.word_hidden.join(" ")}"
 	puts "Player Two has #{new_game.guess_count} guesses out of #{new_game.number_guess} guesses"
 	puts "Player Two which letter do you guess? Or type 'done' to exit"
 	user_guess = gets.chomp
@@ -187,8 +187,8 @@ if new_game.game_over == 1
 elsif new_game.game_over == 2
 	puts "Player Two loses, Ha Ha!"
 end
-puts "-- The word was: #{new_game.answer_word} --"
-puts "Your guessed letters were: #{new_game.guessed_letters}"
+puts "-- The word was: '#{new_game.answer_word.join("")}' --"
+puts "Your guessed letters were: #{new_game.guessed_letters.join(" ")}"
 puts "-------------------------------------------------------------"
 #TEST CODE-----------------------------------------------
 # new_game = WordGame.new 
