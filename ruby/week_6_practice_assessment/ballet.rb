@@ -1,11 +1,12 @@
 class Dancer
 
-	attr_reader :name
+	attr_reader :name, :card
 	attr_accessor :age
 
 	def initialize(name, age)
 		@name = name
 		@age = age
+		@card = []
 	end
 
 	def pirouette
@@ -18,6 +19,11 @@ class Dancer
 		bows = "*bows*"
 		puts bows
 		bows
+	end
+
+	def queue_dance_with(dancer)
+		@card << dancer
+		dancer
 	end
 
 end
