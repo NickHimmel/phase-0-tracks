@@ -1,4 +1,5 @@
- // var arry = ["long phrase","longest phrase","longer phrase"]
+// **Release 0: Find the Longest Phrase
+// var arry = ["long phrase","longest phrase","longer phrase"]
 
 // console.log(arry[0].length)
 // console.log(arry[1].length)
@@ -41,5 +42,33 @@ function longest_word(arry){
 	return longest_str;
 }
 
+// **Release 1: Find a Key-Value Match
+// var new_object_1 = {name: "Steven", age: 54};
+// var new_object_2 = {name: "Tamir", age: 54};
+// console.log(new_object_1['age'])
+// for (var prop in new_object_1) {
+// 	console.log(prop)
+// } 
+// console.log(Object.keys(new_object_1))
+
+// Create a function that finds key-value matches and returns true or false if there is at least one match
+// Create a function called match_objects that takes two match_objects
+// 	-create an empty array called keys_one to hold the keys of the first object
+// 	-create an empty array called keys_two to hold the keys of the second object
+// 	-create an empty array called values_one to hold the values of the first object
+// 	-create an empty array called values_two to hold the values of the second object
+// 	-I don't know if it is cheating to use Objects.keys, is that a slick search function? So I am going to use a For in loop to generate the two arrays of keys
+// 	-use a for in loop to add the key names to the first key array and add the values to the first value array
+// 	-use a for in loop to add the key names to the second key array and add the values to the first value array
+// 	-now run a for loop with i = 0 and loop until i is less then the length of the first object
+// 		-if keys_one at index i is equal to keys_two at index i AND values_one at index i is equal to values_two at index 
+// 			-return true
+// 		else 
+// 			-return false
+
 longest_word(["long phrase","longest phrase","longer phrase"]);
 longest_word(["budgie","bird","Sidney and Monkey"]);
+
+
+
+
