@@ -1,4 +1,4 @@
-// var arry = ["long phrase","longest phrase","longer phrase"]
+ // var arry = ["long phrase","longest phrase","longer phrase"]
 
 // console.log(arry[0].length)
 // console.log(arry[1].length)
@@ -24,17 +24,21 @@ function longest_word(arry){
 // create a variable called longest_str to hold your answer
 	var longest_str = "";
 // a loop within a loop 
+// first for loop starts with one index of the array, one string
 	for (var i = 0; i < arry.length; i++) {
-		console.log(arry[i].length);
+		// console.log(arry[i].length);
+		// 	the inner loop compares the other indexes against the string at that index
 		for (var x = 0; x < arry.length; x++) {
-			console.log(arry[x].length);
+			// console.log(arry[x].length);
+			// To now find the longest string run an if statement, if the length of the string at index i is greater then the length of the string at index x AND it is greater then the length of longest_str make longest_str equal to the string at index i.
+			if(arry[i] < arry[x]) {
+				console.log(arry[i] + " is not the longest")
+			}
 		}
 	}
-// first for loop starts with one index of the array, one string
-// 	the inner loop compares the other indexes against the string at that index
-// 		if any of those values are bigger then the string, the string is not the longest
-// 		else that string is the biggest. 
 // return longest_str
+	console.log(longest_str);
+	return longest_str;
 }
 
 longest_word(["long phrase","longest phrase","longer phrase"]);
