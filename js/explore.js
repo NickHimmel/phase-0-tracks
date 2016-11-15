@@ -17,4 +17,7 @@ function reverse(str_forward) {
 console.log(reverse("hello world"));
 
 var new_str = reverse('I think I can I think I can I think I can')
-console.log(new_str)
+
+if (1 == 1) {
+	console.log(new_str);
+}
