@@ -7,9 +7,16 @@ function longest_word(arry) {
 		console.log(arry)
 		var longest_str = "";
 // -	call a for loop on array to iterate through the array with variable i
+		for (var i = 0; i < arry.length; i++){
 // -		call another for loop within the first loop with variable x
+			for (var i = 0; i < arry.length; i++){
 // -			in the second loop call an if loop, if your array at index i is longer then your array at index x
 // 				then longest_str is equal array at index i
+				if arry[i].length > arry[x].length {
+					longest_str = arry[i]; 
+				}
+			}
+		}
 // -	return longest_str
 		return longest_str
 }
