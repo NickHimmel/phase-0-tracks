@@ -21,7 +21,7 @@
 // so you need to check for a condition where when compared with the other values they are all smaller.
 // create a method called longest_word and pass in the array as a parameter
 function longest_word(arry){
-// create a variable called longest_str to hold your answer
+// create a variable called longest_str to hold the longest string you find while looping, to be a variable to check long strings against so you can find the longest and will hold the final long string and will be the variable you return.
 	var longest_str = "";
 // a loop within a loop 
 // first for loop starts with one index of the array, one string
@@ -42,3 +42,4 @@ function longest_word(arry){
 }
 
 longest_word(["long phrase","longest phrase","longer phrase"]);
+longest_word(["budgie","bird","Sidney and Monkey"]);
