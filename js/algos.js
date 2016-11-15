@@ -22,10 +22,16 @@
 // create a method called longest_word and pass in the array as a parameter
 function longest_word(arry){
 // create a variable called longest_str to hold your answer
+	var longest_str = "";
 // a loop within a loop 
+	for (var i = 0; i < arry.length; i++) {
+		console.log(arry);
+	}
 // first for loop starts with one index of the array, one string
 // 	the inner loop compares the other indexes against the string at that index
 // 		if any of those values are bigger then the string, the string is not the longest
 // 		else that string is the biggest. 
 // return longest_str
 }
+
+longest_word(["long phrase","longest phrase","longer phrase"]);
