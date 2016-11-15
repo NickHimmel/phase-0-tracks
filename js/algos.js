@@ -25,7 +25,10 @@ function longest_word(arry){
 	var longest_str = "";
 // a loop within a loop 
 	for (var i = 0; i < arry.length; i++) {
-		console.log(arry);
+		console.log(arry[i].length);
+		for (var x = 0; x < arry.length; x++) {
+			console.log(arry[x].length);
+		}
 	}
 // first for loop starts with one index of the array, one string
 // 	the inner loop compares the other indexes against the string at that index
