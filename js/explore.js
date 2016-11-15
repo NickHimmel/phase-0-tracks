@@ -15,3 +15,6 @@ function reverse(str_forward) {
 }
 // console log the function reverse passing in the string "hello world"
 console.log(reverse("hello world"));
+
+var new_str = reverse('I think I can I think I can I think I can')
+console.log(new_str)
