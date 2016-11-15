@@ -31,8 +31,8 @@ function longest_word(arry){
 		for (var x = 0; x < arry.length; x++) {
 			// console.log(arry[x].length);
 			// To now find the longest string run an if statement, if the length of the string at index i is greater then the length of the string at index x AND it is greater then the length of longest_str make longest_str equal to the string at index i.
-			if(arry[i] < arry[x]) {
-				console.log(arry[i] + " is not the longest")
+			if(arry[i].length > arry[x].length && arry[i].length > longest_str.length) {
+				longest_str = arry[i]
 			}
 		}
 	}
