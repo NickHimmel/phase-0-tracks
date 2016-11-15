@@ -20,6 +20,7 @@
 
 // so you need to check for a condition where when compared with the other values they are all smaller.
 // create a method called longest_word and pass in the array as a parameter
+function longest_word(arry){
 // create a variable called longest_str to hold your answer
 // a loop within a loop 
 // first for loop starts with one index of the array, one string
@@ -27,3 +28,4 @@
 // 		if any of those values are bigger then the string, the string is not the longest
 // 		else that string is the biggest. 
 // return longest_str
+}
