@@ -55,13 +55,11 @@ function longest_word(arry){
 // Create a function called match_objects that takes two match_objects
 // 	-create an empty array called keys_one to hold the keys of the first object
 // 	-create an empty array called keys_two to hold the keys of the second object
-// 	-create an empty array called values_one to hold the values of the first object
-// 	-create an empty array called values_two to hold the values of the second object
 // 	-I don't know if it is cheating to use Objects.keys, is that a slick search function? So I am going to use a For in loop to generate the two arrays of keys
-// 	-use a for in loop to add the key names to the first key array and add the values to the first value array
-// 	-use a for in loop to add the key names to the second key array and add the values to the first value array
+// 	-use a for in loop to add the key names to the first key array 
+// 	-use a for in loop to add the key names to the second key array
 // 	-now run a for loop with i = 0 and loop until i is less then the length of the first object
-// 		-if keys_one at index i is equal to keys_two at index i AND values_one at index i is equal to values_two at index 
+// 		-if keys_one at index i is equal to keys_two at index i AND object one[keys_one[i]] is equal to object two[keys_one[i]] 
 // 			-return true
 // 		else 
 // 			-return false
