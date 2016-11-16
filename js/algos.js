@@ -95,6 +95,8 @@ function random_test_data(number_of){
 // 		-create a for loop that runs the number of times that is the interger passed in
 	for (var i = 0; i < number_of; i++){
 // 			-create an integer called random_number and use math.random times 10 and plus 1, then rounded down with math.floor
+		var random_number = Math.floor(Math.random() * 10) + 1;
+		console.log(random_number)
 // 			-create an empty string called random_word to hold your random random_word
 // 				-create a new for loop that runs the number of times that is random_number
 // 					-create an integer called random_index and use math.random times the length of chars_array
@@ -112,5 +114,6 @@ longest_word(["budgie","bird","Sidney and Monkey"]);
 compare_objects({name: "Steven", age: 54}, {name: "Tamir", age: 54});
 console.log(compare_objects({name: "Steven", age: 54}, {name: "Tamir", age: 54}));
 console.log(compare_objects({name: "Steven", age: 54}, {named: "Tamir", aged: 54}));
+random_test_data(3);
 
 
