@@ -89,9 +89,11 @@ function compare_objects(object_1, object_2){
 // 	-create a function called random_test_data and pass in an integer called number_of
 function random_test_data(number_of){
 // 		-create an array called chars_array with random characters in order to later generate random character strings
-	chars_array = ["a", "b",  "c",  "d",  "e",  "f",  "g",  "h",  "i",  "j",  "k",  "l", "m", "n",  "o",  "p",  "q",  "r",  "s",  "t", "u", "v",  "w",  "x",  "y",  "z", ]
+	chars_array = ["a", "b",  "c",  "d",  "e",  "f",  "g",  "h",  "i",  "j",  "k",  "l", "m", "n",  "o",  "p",  "q",  "r",  "s",  "t", "u", "v",  "w",  "x",  "y",  "z", ];
 // 		-create an array called random_data to hold our answer array
+	random_data = [];
 // 		-create a for loop that runs the number of times that is the interger passed in
+	for (var i = 0; i < number_of; i++){
 // 			-create an integer called random_number and use math.random times 10 and plus 1, then rounded down with math.floor
 // 			-create an empty string called random_word to hold your random random_word
 // 				-create a new for loop that runs the number of times that is random_number
@@ -99,8 +101,10 @@ function random_test_data(number_of){
 // 					-add to random_word from the chars_array at index of random_index
 // 				end loop
 // 			-push random word to random dat
-
+			// -end loop
+	}
 // 		-return random_data
+	return random_data;
 }
 
 longest_word(["long phrase","longest phrase","longer phrase"]);
