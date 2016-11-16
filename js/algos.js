@@ -59,7 +59,7 @@ function longest_word(arry){
 // 	-use a for in loop to add the key names to the first key array 
 // 	-use a for in loop to add the key names to the second key array
 // 	-now run a for loop with i = 0 and loop until i is less then the length of the first object
-// 		-if keys_one at index i is equal to keys_two at index i AND object one[keys_one[i]] is equal to object two[keys_one[i]] 
+// 		-if keys_one at index i is equal to keys_two at index i AND the value called at keys_one[i] of object one is equal to the value called at keys_one[i] of object two
 // 			-return true
 // 		else 
 // 			-return false
