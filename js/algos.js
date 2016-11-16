@@ -53,6 +53,7 @@ function longest_word(arry){
 
 // Create a function that finds key-value matches and returns true or false if there is at least one match
 // Create a function called match_objects that takes two match_objects
+function compare_objects(object_1, object_2)
 // 	-create an empty array called keys_one to hold the keys of the first object
 // 	-create an empty array called keys_two to hold the keys of the second object
 // 	-I don't know if it is cheating to use Objects.keys, is that a slick search function? So I am going to use a For in loop to generate the two arrays of keys
@@ -63,10 +64,12 @@ function longest_word(arry){
 // 			-return true
 // 		else 
 // 			-return false
+	console.log(object_1, object_2);
+end
 
 longest_word(["long phrase","longest phrase","longer phrase"]);
 longest_word(["budgie","bird","Sidney and Monkey"]);
-
+compare_objects({name: "Steven", age: 54}, {name: "Tamir", age: 54});
 
 
 
