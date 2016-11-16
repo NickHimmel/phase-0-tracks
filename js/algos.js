@@ -75,20 +75,19 @@ function compare_objects(object_1, object_2){
 		if (keys_1[i] == keys_2[i] && object_1[keys_1[i]] == object_2[keys_2[i]]){
 			// console.log("True!");
 // 			-return true
-		}
-// 		else
-		else { 
-			// console.log("False!");
-// 			-return false
+			return true;
 		}
 	}
 	// console.log(object_1, object_2);
 	// console.log(keys_1, keys_2);
+	// if no match is found and the loop ends return false
+	return false;
 }
 
 longest_word(["long phrase","longest phrase","longer phrase"]);
 longest_word(["budgie","bird","Sidney and Monkey"]);
 compare_objects({name: "Steven", age: 54}, {name: "Tamir", age: 54});
-
+console.log(compare_objects({name: "Steven", age: 54}, {name: "Tamir", age: 54}));
+console.log(compare_objects({name: "Steven", age: 54}, {named: "Tamir", aged: 54}));
 
 
