@@ -89,6 +89,7 @@ function compare_objects(object_1, object_2){
 // 	-create a function called random_test_data and pass in an integer called number_of
 function random_test_data(number_of){
 // 		-create an array called chars_array with random characters in order to later generate random character strings
+	// console.log(number_of)
 	chars_array = ["a", "b",  "c",  "d",  "e",  "f",  "g",  "h",  "i",  "j",  "k",  "l", "m", "n",  "o",  "p",  "q",  "r",  "s",  "t", "u", "v",  "w",  "x",  "y",  "z", ];
 // 		-create an array called random_data to hold our answer array
 	random_data = [];
@@ -96,13 +97,19 @@ function random_test_data(number_of){
 	for (var i = 0; i < number_of; i++){
 // 			-create an integer called random_number and use math.random times 10 and plus 1, then rounded down with math.floor
 		var random_number = Math.floor(Math.random() * 10) + 1;
-		console.log(random_number)
+		// console.log(random_number)
 // 			-create an empty string called random_word to hold your random random_word
+		var random_word = "";
 // 				-create a new for loop that runs the number of times that is random_number
+			for (var x = 1; x <= random_number; x++){
 // 					-create an integer called random_index and use math.random times the length of chars_array
+				var random_index = Math.floor(Math.random() * chars_array.length) + 1;
 // 					-add to random_word from the chars_array at index of random_index
+				random_word += chars_array[random_index];
 // 				end loop
+			}
 // 			-push random word to random dat
+			random_data.push(random_word)
 			// -end loop
 	}
 // 		-return random_data
@@ -114,6 +121,6 @@ longest_word(["budgie","bird","Sidney and Monkey"]);
 compare_objects({name: "Steven", age: 54}, {name: "Tamir", age: 54});
 console.log(compare_objects({name: "Steven", age: 54}, {name: "Tamir", age: 54}));
 console.log(compare_objects({name: "Steven", age: 54}, {named: "Tamir", aged: 54}));
-random_test_data(3);
+console.log(random_test_data(3));
 
 
