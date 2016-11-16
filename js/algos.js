@@ -55,10 +55,18 @@ function longest_word(arry){
 // Create a function called match_objects that takes two match_objects
 function compare_objects(object_1, object_2){
 // 	-create an empty array called keys_one to hold the keys of the first object
+	var keys_1 = [];
 // 	-create an empty array called keys_two to hold the keys of the second object
+	var keys_2 = [];
 // 	-I don't know if it is cheating to use Objects.keys, is that a slick search function? So I am going to use a For in loop to generate the two arrays of keys
 // 	-use a for in loop to add the key names to the first key array 
+	for (var prop in object_1) {
+		console.log(prop);
+	}
 // 	-use a for in loop to add the key names to the second key array
+	for (var prop in object_2) {
+		console.log(prop);
+	}
 // 	-now run a for loop with i = 0 and loop until i is less then the length of the first object
 // 		-if keys_one at index i is equal to keys_two at index i AND the value called at keys_one[i] of object one is equal to the value called at keys_one[i] of object two
 // 			-return true
