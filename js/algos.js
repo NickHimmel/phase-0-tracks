@@ -70,12 +70,20 @@ function compare_objects(object_1, object_2){
 		keys_2.push(prop);
 	}
 // 	-now run a for loop with i = 0 and loop until i is less then the length of the first object
+	for (var i = 0; i < keys_1.length; i++){
 // 		-if keys_one at index i is equal to keys_two at index i AND the value called at keys_one[i] of object one is equal to the value called at keys_one[i] of object two
+		if (keys_1[i] == keys_2[i] && object_1[keys_1[i]] == object_2[keys_2[i]]){
+			// console.log("True!");
 // 			-return true
-// 		else 
+		}
+// 		else
+		else { 
+			// console.log("False!");
 // 			-return false
+		}
+	}
 	// console.log(object_1, object_2);
-	console.log(keys_1, keys_2);
+	// console.log(keys_1, keys_2);
 }
 
 longest_word(["long phrase","longest phrase","longer phrase"]);
