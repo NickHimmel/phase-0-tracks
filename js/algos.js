@@ -84,6 +84,22 @@ function compare_objects(object_1, object_2){
 	return false;
 }
 
+Release 2: Generate Random Test Data
+create a function that takes an integer for length then returns an array with that number of randomly generated strings, each string should have a randomly generated number of lengths with a minimum of 1 and maximum of 10.
+	-create a function called random_test_data and pass in an integer called number_of
+		-create an array called chars_array with random characters in order to later generate random character strings
+		-create an array called random_data to hold our answer array
+		-create a for loop that runs the number of times that is the interger passed in
+			-create an integer called random_number and use math.random times 10 and plus 1, then rounded down with math.floor
+			-create an empty string called random_word to hold your random random_word
+				-create a new for loop that runs the number of times that is random_number
+					-create an integer called random_index and use math.random times the length of chars_array
+					-add to random_word from the chars_array at index of random_index
+				end loop
+			-push random word to random dat
+
+		-return random_data
+
 longest_word(["long phrase","longest phrase","longer phrase"]);
 longest_word(["budgie","bird","Sidney and Monkey"]);
 compare_objects({name: "Steven", age: 54}, {name: "Tamir", age: 54});
