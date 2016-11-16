@@ -38,7 +38,6 @@ function longest_word(arry){
 		}
 	}
 // return longest_str
-	console.log(longest_str);
 	return longest_str;
 }
 
@@ -103,7 +102,7 @@ function random_test_data(number_of){
 // 				-create a new for loop that runs the number of times that is random_number
 			for (var x = 1; x <= random_number; x++){
 // 					-create an integer called random_index and use math.random times the length of chars_array
-				var random_index = Math.floor(Math.random() * chars_array.length) + 1;
+				var random_index = Math.floor(Math.random() * 25) + 1;
 // 					-add to random_word from the chars_array at index of random_index
 				random_word += chars_array[random_index];
 // 				end loop
@@ -116,11 +115,20 @@ function random_test_data(number_of){
 	return random_data;
 }
 
-longest_word(["long phrase","longest phrase","longer phrase"]);
-longest_word(["budgie","bird","Sidney and Monkey"]);
-compare_objects({name: "Steven", age: 54}, {name: "Tamir", age: 54});
-console.log(compare_objects({name: "Steven", age: 54}, {name: "Tamir", age: 54}));
-console.log(compare_objects({name: "Steven", age: 54}, {named: "Tamir", aged: 54}));
-console.log(random_test_data(3));
+// console.log(longest_word(["long phrase","longest phrase","longer phrase"]));
+// longest_word(["budgie","bird","Sidney and Monkey"]);
+// console.log(compare_objects({name: "Steven", age: 54}, {name: "Tamir", age: 54}));
+// console.log(compare_objects({name: "Steven", age: 54}, {name: "Tamir", age: 54}));
+// console.log(compare_objects({name: "Steven", age: 54}, {named: "Tamir", aged: 54}));
+// console.log(random_test_data(3));
+
+// Release 2: Generate Random Test Data
+// 2. Add driver code that does the following 10 times: generates an array, prints the array, feeds the array to your "longest word" function, and prints the result.
+
+for (var i = 1; i <= 10; i++){
+	var random_array = random_test_data(3);
+	var longest_data_word = longest_word(random_array);
+	console.log("Your random data is: " + random_array + "\nThe longest word is: " + longest_data_word);
+}
 
 
