@@ -1,3 +1,4 @@
+// 7.2 Mandatory Pairing with Vilde Vevatne
 var colors = ["blue", "red", "yellow", "orange"];
 var horses = ["Dan", "Steve", "Alex", "Mary" ];
 var horse_color = {};
