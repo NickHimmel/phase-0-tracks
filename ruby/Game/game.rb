@@ -26,12 +26,12 @@ class WordGame
 # 			Word_hidden is an empty array
 # 			Answer_word is an empty array
 	def initialize
-		@answer_word = [];
-		@word_hidden = [];
-		@guessed_letters = [];
-		@guess_count = 0;
-		@number_guess = 0;
-		@game_over = 0;
+		@answer_word = []
+		@word_hidden = []
+		@guessed_letters = []
+		@guess_count = 0
+		@number_guess = 0
+		@game_over = 0
 	end
 
 # 	Create Method for Word_to_guess with a parameter for the user_word
