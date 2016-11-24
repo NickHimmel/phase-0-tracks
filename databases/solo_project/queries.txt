@@ -1,0 +1,180 @@
+Release 2: Execute SQL Queries
+
+1.Display the information in one table (either table is fine).
+
+SELECT * FROM characters;
+
+1|James T. Kirk|1966|1994|true|1
+2|Spock|1966|2009|false|1
+3|Leonard McCoy|1966|1991|false|1
+4|Jean-Luc Picard|1987|2002|true|2
+5|Data|1987|2002|false|2
+6|Deanna Troi|1987|2002|false|2
+7|Worf|1987|2002|false|2
+8|Benjamin Sisko|1993|1999|true|3
+9|Odo|1993|1999|false|3
+10|Kira Nerys|1993|1999|false|3
+11|Kathryn Janeway|1995|2001|true|4
+12|The Doctor|1995|2001|false|4
+13|Seven of Nine|1997|2001|false|4
+
+2.Update an item that meets some condition (you can choose a condition that makes sense).
+
+UPDATE characters SET show_id=3 WHERE name="Worf";
+SELECT * FROM characters WHERE name="Worf";
+7|Worf|1987|2002|false|3
+
+3.Display the information in both tables using one query.
+
+SELECT * FROM characters, shows WHERE characters.show_id = shows.id;
+
+1|James T. Kirk|1966|1994|true|1|1|The Original Series
+2|Spock|1966|2009|false|1|1|The Original Series
+3|Leonard McCoy|1966|1991|false|1|1|The Original Series
+4|Jean-Luc Picard|1987|2002|true|2|2|The Next Generation
+5|Data|1987|2002|false|2|2|The Next Generation
+6|Deanna Troi|1987|2002|false|2|2|The Next Generation
+7|Worf|1987|2002|false|3|3|Deep Space Nine
+8|Benjamin Sisko|1993|1999|true|3|3|Deep Space Nine
+9|Odo|1993|1999|false|3|3|Deep Space Nine
+10|Kira Nerys|1993|1999|false|3|3|Deep Space Nine
+11|Kathryn Janeway|1995|2001|true|4|4|Voyager
+12|The Doctor|1995|2001|false|4|4|Voyager
+13|Seven of Nine|1997|2001|false|4|4|Voyager
+
+4.Display a narrower selection of columns (fewer columns than all of them, in other words) from both tables using one query.
+
+SELECT characters.name, shows.title FROM characters JOIN shows ON characters.show_id = shows.id;
+
+James T. Kirk|The Original Series
+Spock|The Original Series
+Leonard McCoy|The Original Series
+Jean-Luc Picard|The Next Generation
+Data|The Next Generation
+Deanna Troi|The Next Generation
+Worf|Deep Space Nine
+Benjamin Sisko|Deep Space Nine
+Odo|Deep Space Nine
+Kira Nerys|Deep Space Nine
+Kathryn Janeway|Voyager
+The Doctor|Voyager
+Seven of Nine|Voyager
+
+5.Delete an item that meets some condition (you can choose a condition that makes sense).
+
+INSERT INTO characters (name, date_from, date_to, is_captain, show_id) VALUES ("Jadzia Dax", 1993, 1998, "false", 3);
+
+1|James T. Kirk|1966|1994|true|1
+2|Spock|1966|2009|false|1
+3|Leonard McCoy|1966|1991|false|1
+4|Jean-Luc Picard|1987|2002|true|2
+5|Data|1987|2002|false|2
+6|Deanna Troi|1987|2002|false|2
+7|Worf|1987|2002|false|3
+8|Benjamin Sisko|1993|1999|true|3
+9|Odo|1993|1999|false|3
+10|Kira Nerys|1993|1999|false|3
+11|Kathryn Janeway|1995|2001|true|4
+12|The Doctor|1995|2001|false|4
+13|Seven of Nine|1997|2001|false|4
+14|Jadzia Dax|1993|1998|false|3
+
+DELETE FROM characters WHERE id=14;
+
+1|James T. Kirk|1966|1994|true|1
+2|Spock|1966|2009|false|1
+3|Leonard McCoy|1966|1991|false|1
+4|Jean-Luc Picard|1987|2002|true|2
+5|Data|1987|2002|false|2
+6|Deanna Troi|1987|2002|false|2
+7|Worf|1987|2002|false|3
+8|Benjamin Sisko|1993|1999|true|3
+9|Odo|1993|1999|false|3
+10|Kira Nerys|1993|1999|false|3
+11|Kathryn Janeway|1995|2001|true|4
+12|The Doctor|1995|2001|false|4
+13|Seven of Nine|1997|2001|false|4
+
+INSERT INTO characters (name, date_from, date_to, is_captain, show_id) VALUES ("Ezri Dax", 1998, 1999, "false", 3);
+
+Release 3: Research on Your Own
+
+1. Try a few different joins in your database, and record the commands and the output in queries.txt.
+
+SELECT * FROM characters CROSS JOIN shows;
+
+1|James T. Kirk|1966|1994|true|1|1|The Original Series
+1|James T. Kirk|1966|1994|true|1|2|The Next Generation
+1|James T. Kirk|1966|1994|true|1|3|Deep Space Nine
+1|James T. Kirk|1966|1994|true|1|4|Voyager
+2|Spock|1966|2009|false|1|1|The Original Series
+2|Spock|1966|2009|false|1|2|The Next Generation
+2|Spock|1966|2009|false|1|3|Deep Space Nine
+2|Spock|1966|2009|false|1|4|Voyager
+3|Leonard McCoy|1966|1991|false|1|1|The Original Series
+3|Leonard McCoy|1966|1991|false|1|2|The Next Generation
+3|Leonard McCoy|1966|1991|false|1|3|Deep Space Nine
+3|Leonard McCoy|1966|1991|false|1|4|Voyager
+4|Jean-Luc Picard|1987|2002|true|2|1|The Original Series
+4|Jean-Luc Picard|1987|2002|true|2|2|The Next Generation
+4|Jean-Luc Picard|1987|2002|true|2|3|Deep Space Nine
+4|Jean-Luc Picard|1987|2002|true|2|4|Voyager
+5|Data|1987|2002|false|2|1|The Original Series
+5|Data|1987|2002|false|2|2|The Next Generation
+5|Data|1987|2002|false|2|3|Deep Space Nine
+5|Data|1987|2002|false|2|4|Voyager
+6|Deanna Troi|1987|2002|false|2|1|The Original Series
+6|Deanna Troi|1987|2002|false|2|2|The Next Generation
+6|Deanna Troi|1987|2002|false|2|3|Deep Space Nine
+6|Deanna Troi|1987|2002|false|2|4|Voyager
+7|Worf|1987|2002|false|3|1|The Original Series
+7|Worf|1987|2002|false|3|2|The Next Generation
+7|Worf|1987|2002|false|3|3|Deep Space Nine
+7|Worf|1987|2002|false|3|4|Voyager
+8|Benjamin Sisko|1993|1999|true|3|1|The Original Series
+8|Benjamin Sisko|1993|1999|true|3|2|The Next Generation
+8|Benjamin Sisko|1993|1999|true|3|3|Deep Space Nine
+8|Benjamin Sisko|1993|1999|true|3|4|Voyager
+9|Odo|1993|1999|false|3|1|The Original Series
+9|Odo|1993|1999|false|3|2|The Next Generation
+9|Odo|1993|1999|false|3|3|Deep Space Nine
+9|Odo|1993|1999|false|3|4|Voyager
+10|Kira Nerys|1993|1999|false|3|1|The Original Series
+10|Kira Nerys|1993|1999|false|3|2|The Next Generation
+10|Kira Nerys|1993|1999|false|3|3|Deep Space Nine
+10|Kira Nerys|1993|1999|false|3|4|Voyager
+11|Kathryn Janeway|1995|2001|true|4|1|The Original Series
+11|Kathryn Janeway|1995|2001|true|4|2|The Next Generation
+11|Kathryn Janeway|1995|2001|true|4|3|Deep Space Nine
+11|Kathryn Janeway|1995|2001|true|4|4|Voyager
+12|The Doctor|1995|2001|false|4|1|The Original Series
+12|The Doctor|1995|2001|false|4|2|The Next Generation
+12|The Doctor|1995|2001|false|4|3|Deep Space Nine
+12|The Doctor|1995|2001|false|4|4|Voyager
+13|Seven of Nine|1997|2001|false|4|1|The Original Series
+13|Seven of Nine|1997|2001|false|4|2|The Next Generation
+13|Seven of Nine|1997|2001|false|4|3|Deep Space Nine
+13|Seven of Nine|1997|2001|false|4|4|Voyager
+14|Ezri Dax|1998|1999|false|3|1|The Original Series
+14|Ezri Dax|1998|1999|false|3|2|The Next Generation
+14|Ezri Dax|1998|1999|false|3|3|Deep Space Nine
+14|Ezri Dax|1998|1999|false|3|4|Voyager
+
+SELECT * FROM characters INNER JOIN shows ON characters.show_id = shows.id;
+
+1|James T. Kirk|1966|1994|true|1|1|The Original Series
+2|Spock|1966|2009|false|1|1|The Original Series
+3|Leonard McCoy|1966|1991|false|1|1|The Original Series
+4|Jean-Luc Picard|1987|2002|true|2|2|The Next Generation
+5|Data|1987|2002|false|2|2|The Next Generation
+6|Deanna Troi|1987|2002|false|2|2|The Next Generation
+7|Worf|1987|2002|false|3|3|Deep Space Nine
+8|Benjamin Sisko|1993|1999|true|3|3|Deep Space Nine
+9|Odo|1993|1999|false|3|3|Deep Space Nine
+10|Kira Nerys|1993|1999|false|3|3|Deep Space Nine
+11|Kathryn Janeway|1995|2001|true|4|4|Voyager
+12|The Doctor|1995|2001|false|4|4|Voyager
+13|Seven of Nine|1997|2001|false|4|4|Voyager
+14|Ezri Dax|1998|1999|false|3|3|Deep Space Nine
+
+
