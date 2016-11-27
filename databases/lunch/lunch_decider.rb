@@ -53,3 +53,4 @@ create_table_cmd = <<-SQL
   )
 SQL
 
+db.execute(create_table_cmd)
