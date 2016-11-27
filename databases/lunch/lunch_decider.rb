@@ -58,5 +58,22 @@ def add_lunch(db, dish, restaurant, details, price, have_tried, desire)
   db.execute("INSERT INTO lunch (dish, restaurant, details, price, have_tried, desire) VALUES (?, ?, ?, ?, ?, ?)", [dish, restaurant,details, price, have_tried, desire])
 end
 
+#USER CODE
+
+puts "\n*$*$*$*$*$*$*$*$*$*$*$*$*$*$*$*$*$*$*$*$*$*$*$*$*$*$*$*$*$*$*"
+puts "\nThe Lunch Decider"
+puts "\n-------------------------------------------------------------"
+
+i = true
+
+while i == true 
+	puts "Type 'enter' to add an exciting lunch option! \nType 'exit' to exit"
+	user_input = gets.chomp.downcase
+	if user_input == "enter"
+		puts user_input
+	elsif user_input == "exit"
+		i = false
+	end
+end
 #TEST CODE
-add_lunch(db, "Chicken Club", "Melt Shop", "grilled chicken, mozzarella, bacon, tomatoes, arugula on sourdough toast", 896, "false", 10)
+# add_lunch(db, "Chicken Club", "Melt Shop", "grilled chicken, mozzarella, bacon, tomatoes, arugula on sourdough toast", 896, "false", 10)
