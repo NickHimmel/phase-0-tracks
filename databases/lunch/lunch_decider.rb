@@ -34,3 +34,5 @@ Create a while true loop
 			-if exit
 				-false
 =end
+
+require 'sqlite3'
