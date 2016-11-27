@@ -7,8 +7,8 @@ Create a database of lunch options that I really want to eat
 CREATE DATABASE
 Create a table for dishes you want to have for lunch
 	-name of dish
-	-name of restaurant
 	-description 
+	-name of restaurant
 	-price
 	-have eaten before
 	-desire for 
@@ -39,3 +39,17 @@ require 'sqlite3'
 
 db = SQLite3::Database.new("lunch.db")
 # db.results_as_hash = true
+
+create_table_cmd = <<-SQL
+  CREATE TABLE IF NOT EXISTS lunch(
+    id INTEGER PRIMARY KEY,
+    dish VARCHAR(255),
+    details VARCHAR(255),
+    restaurant VARCHAR(255),
+    price INT
+    have_tried BOOLEAN
+	desire INT
+	health INT
+  )
+SQL
+
