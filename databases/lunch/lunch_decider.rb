@@ -28,8 +28,6 @@ Create a while true loop
 				-ask what they want to edit
 			-if delete
 				-if they want to delete a single record
-				-if they want to delete all records
-					-give the user a warning are you sure
 				else if you do not want to delete return true to keep loop going
 			-if exit
 				-false
@@ -58,7 +56,6 @@ def add_lunch(db, dish, restaurant, details, price, have_tried, desire)
   db.execute("INSERT INTO lunch (dish, restaurant, details, price, have_tried, desire) VALUES (?, ?, ?, ?, ?, ?)", [dish, restaurant,details, price, have_tried, desire])
 end
 
-lunch_options = db.execute("SELECT * FROM lunch")
 #USER CODE
 
 puts "\n*$*$*$*$*$*$*$*$*$*$*$*$*$*$*$*$*$*$*$*$*$*$*$*$*$*$*$*$*$*$*"
@@ -69,12 +66,13 @@ puts "\n-------------------------------------------------------------"
 i = true
 
 while i == true 
-	puts "Type 'enter' to add an exciting lunch option! \nType 'print' to view your lunch options \nType 'exit' to exit"
+
+	puts "Type 'enter' to add an exciting lunch option! \nType 'print' to view your lunch options \nType 'delete' to delete a lunch option \nType 'exit' to exit"
 	user_input = gets.chomp.downcase
 
 	if user_input == "enter"
 
-		puts "What is the name of the dish?"
+		puts "\nWhat is the name of the dish?"
 		dish = gets.chomp
 		puts "What is the name of the restaurant?"
 		restaurant = gets.chomp
@@ -86,14 +84,34 @@ while i == true
 		have_tried = gets.chomp
 		puts "How much are you craving it (1 to 10, 10 being the most)"
 		desire = gets.chomp.to_i
+
+		add_lunch(db, dish, restaurant, details, price, have_tried, desire)
+	
 	elsif user_input == "print"
+
 		# p lunch_options
+		lunch_options = db.execute("SELECT * FROM lunch")
 		lunch_options.each do |lunch|
  			puts "\nThe #{lunch['dish']} at #{lunch['restaurant']} features: \n#{lunch['details']}! \nIt is #{lunch['price']}. \nYou have tried it before: #{lunch['have_tried']}. How much do you crave it: #{lunch['desire']}!\n\n"
+ 		end
+
+	elsif user_input == "delete"
+
+		puts "\nYour current list:"
+		lunch_options = db.execute("SELECT * FROM lunch")
+		lunch_options.each do |lunch|
+ 			puts "#{lunch['id']}. #{lunch['dish']}"
 		end
+		puts "Type the number of the entry you wish to delete"
+		delete_at = gets.chomp.to_i
+		db.execute("DELETE FROM lunch WHERE id=#{delete_at};")
+
 	elsif user_input == "exit"
+
 		i = false
+
 	end
+
 end
 #TEST CODE
 # add_lunch(db, "Chicken Club", "Melt Shop", "grilled chicken, mozzarella, bacon, tomatoes, arugula on sourdough toast", 896, "false", 10)
