@@ -87,7 +87,10 @@ while i == true
 		puts "How much are you craving it (1 to 10, 10 being the most)"
 		desire = gets.chomp.to_i
 	elsif user_input == "print"
-		p lunch_options
+		# p lunch_options
+		lunch_options.each do |lunch|
+ 			puts "\nThe #{lunch['dish']} at #{lunch['restaurant']} features: \n#{lunch['details']}! \nIt is #{lunch['price']}. \nYou have tried it before: #{lunch['have_tried']}. How much do you crave it: #{lunch['desire']}!\n\n"
+		end
 	elsif user_input == "exit"
 		i = false
 	end
