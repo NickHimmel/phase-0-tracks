@@ -1,0 +1,26 @@
+ - Joining three tables.
+SELECT * FROM businesses, users, reviews WHERE reviews.business_id = businesses.id AND reviews.user_id = users.id;
+
+output:
+
+1|Amir's Towing|1|Bradford|Pitt|1|5|great food!|1|1
+2|The Beagle Nightclub|2|Mandy|Kaling|2|4|Food is good but price is a little high|2|2
+3|Lotus yoga|3|Mike|Brown|3|1|Service just as terrible as food|3|3
+
+- Choose instead to just view the user's names, the business name, the star rating, and the comment.
+
+SELECT users.first_name, users.last_name, businesses.name, reviews.stars, reviews.comment FROM reviews JOIN businesses, users ON reviews.business_id = businesses.id AND reviews.user_id = users.id;
+
+output:
+
+Bradford|Pitt|Amir's Towing|5|great food!
+Mandy|Kaling|The Beagle Nightclub|4|Food is good but price is a little high
+Mike|Brown|Lotus yoga|1|Service just as terrible as food
+
+- How do you view the data of all three tables for just one particular business? 
+
+SELECT * FROM businesses, users, reviews WHERE reviews.business_id = businesses.id AND reviews.user_id = users.id AND businesses.name = "Lotus yoga";
+
+output:
+
+3|Lotus yoga|3|Mike|Brown|3|1|Service just as terrible as food|3|3
