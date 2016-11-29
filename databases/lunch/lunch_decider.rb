@@ -67,7 +67,7 @@ i = true
 
 while i == true 
 
-	puts "Type 'enter' to add an exciting lunch option! \nType 'print' to view your lunch options \nType 'delete' to delete a lunch option \nType 'exit' to exit"
+	puts "Type 'enter' to add an exciting lunch option! \nType 'print' to view your lunch options \nType 'delete' to delete a lunch option \nType 'edit' to edit an entry \nType 'exit' to exit"
 	user_input = gets.chomp.downcase
 
 	if user_input == "enter"
@@ -98,13 +98,44 @@ while i == true
 	elsif user_input == "delete"
 
 		puts "\nYour current list:"
+		
 		lunch_options = db.execute("SELECT * FROM lunch")
+		
 		lunch_options.each do |lunch|
  			puts "#{lunch['id']}. #{lunch['dish']}"
 		end
+
 		puts "Type the number of the entry you wish to delete"
 		delete_at = gets.chomp.to_i
+		
 		db.execute("DELETE FROM lunch WHERE id=#{delete_at};")
+	
+	elsif  user_input == "edit"
+
+		puts "\nYour current list:"
+		
+		lunch_options = db.execute("SELECT * FROM lunch")
+		
+		lunch_options.each do |lunch|
+ 			puts "#{lunch['id']}. #{lunch['dish']}"
+ 		end
+
+ 		puts "Type the number of the entry you wish to edit"
+ 		edit_at = gets.chomp.to_i
+
+ 		puts "Type 'dish' to update the dish \nType 'restaurant' to update the restaurant  \nType 'details' to update the details \nType 'price' to update the price \nType 'have_tried' to update if you have tried it \nType 'desire' to update how much you desire it:"
+ 		edit_old = gets.chomp
+
+ 		puts "Type the new value of #{edit_old}:"
+ 		edit_new = gets.chomp
+
+ 		if edit_old == price || edit_old == desire
+ 			edit_old.to_i
+ 			edit_new.to_i
+ 			db.execute("UPDATE lunch SET #{edit_old}=#{edit_new} WHERE id=#{edit_at};")
+ 		else
+ 			db.execute("UPDATE lunch SET #{edit_old}='#{edit_new}' WHERE id=#{edit_at};")
+ 		end
 
 	elsif user_input == "exit"
 
