@@ -50,19 +50,6 @@ var controller = {
 		 
 		var img_link = "<img src=\"img/" + game_cards.cards[i-1].img + "\" alt=\"memory card\">";
 		return img_link;
-	}
-
-}
-
-var view = {
-
-	display_cards: function () {
-		for (var i = 1; i <= 12; i++) {
-			var card_spot = "#card_" + i;
-			console.log(card_spot)
-			// console.log(controller.card_link(i));
-			$(card_spot).append(controller.card_link(i));
-		}
 	},
 
 	//  Fisher-Yates (aka Knuth) Shuffle algorithm
@@ -85,15 +72,44 @@ var view = {
 	  }
 
 	  return array;
-	}
+	},
 
-	randomize: function(array){
-		$("#randomize")
+}
+
+var view = {
+
+	display_cards: function () {
+		for (var i = 1; i <= 12; i++) {
+			var card_spot = "#card_" + i;
+			console.log(card_spot)
+			// console.log(controller.card_link(i));
+			$(card_spot).append(controller.card_link(i));
+		}
+	},
+
+	random_cards: function () {
+		var random_index = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+		random_index = controller.shuffle(random_index);
+		var random_card = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+		random_card = controller.shuffle(random_card);
+		for (var i = 1; i <= 12; i++) {
+			var card_spot = "#card_" + random_car[i];
+			// console.log(card_spot)
+			// console.log(controller.card_link(i));
+			$(card_spot).append(controller.card_link(random_index[i]));
+		}
+	},
+
+	random_button: function(array){
+		$("#randomize").click(function(){
+			console.log("hello world")
+		});
 	}
 
 }
 
 console.log(view.display_cards())
 var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
-arr = view.shuffle(arr);
+arr = controller.shuffle(arr);
 console.log(arr);
+view.random_button()
