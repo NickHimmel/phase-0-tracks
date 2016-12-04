@@ -1,0 +1,20 @@
+img {
+	width: 100%;
+}
+
+.row {
+	position: relative;
+}
+
+.cards {
+	/*margin: 10px 0;*/
+}
+
+.front {
+	display: none;
+}
+
+.row_cards {
+	margin: 10px 0;
+	cursor: pointer;
+}
