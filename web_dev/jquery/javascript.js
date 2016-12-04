@@ -1,4 +1,5 @@
-// console.log("hello world");
+
+// // console.log("hello world");
 
 var game_cards = {
 	cards: [
@@ -7,42 +8,41 @@ var game_cards = {
 			img: "back_of_card_1.png"
 		},{
 			id: 1,
-			img: "back_of_card_1.png"
-		},{
-			id: 2,
 			img: "back_of_card_2.png"
 		},{
 			id: 2,
-			img: "back_of_card_2.png"
-		},{
-			id: 3,
 			img: "back_of_card_3.png"
 		},{
+			id: 2,
+			img: "back_of_card_4.png"
+		},{
 			id: 3,
-			img: "back_of_card_3.png"
-		},{
-			id: 4,
-			img: "back_of_card_4.png"
-		},{
-			id: 4,
-			img: "back_of_card_4.png"
-		},{
-			id: 5,
 			img: "back_of_card_5.png"
 		},{
+			id: 3,
+			img: "back_of_card_6.png"
+		},{
+			id: 4,
+			img: "back_of_card_7.png"
+		},{
+			id: 4,
+			img: "back_of_card_8.png"
+		},{
 			id: 5,
-			img: "back_of_card_5.png"
+			img: "back_of_card_9.png"
+		},{
+			id: 5,
+			img: "back_of_card_10.png"
 		},{
 			id: 6,
-			img: "back_of_card_6.png"
+			img: "back_of_card_11.png"
 		},{
 			id: 6,
-			img: "back_of_card_6.png"
+			img: "back_of_card_12.png"
 		}
 	]
 }
 
-// console.log(game_cards.cards[0].img);
 
 var controller = {
 
@@ -73,14 +73,15 @@ var controller = {
 	  }
 
 	  return array;
-	},
+	}
 
 }
 
 var view = {
 
 	display_cards: function () {
-		for (var i = 1; i <= 12; i++) {
+		$('.cards').html('');
+		for (var i = 1; i <= game_cards.cards.length; i++) {
 			var card_spot = "#card_" + i;
 			// console.log(card_spot)
 			// console.log(controller.card_link(i));
@@ -106,12 +107,31 @@ var view = {
 			// console.log("hello world")
 			view.random_cards();
 		});
-	}
+	},
 
+	hide_card: function(){
+		$(".cards").click(function(){
+			$(this).hide();
+			$(this).siblings().show();
+			view.hide_card();
+		});
+		$(".front").click(function(){
+			$(".cards").show();
+			$(this).hide();
+			view.hide_card();
+		});
+	},
+
+	init: function(){
+		view.display_cards();
+		view.hide_card();
+		view.random_button();
+	}
 }
 
-view.display_cards()
+
 // var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 // arr = controller.shuffle(arr);
 // console.log(arr);
-view.random_button()
+view.init();
+
